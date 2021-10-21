@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Text } from 'react-native';
+import Routes from '~/routes';
 
 const App = () => {
   return (
-    <Text>App</Text>
+    <Routes />
   );
 };
 
