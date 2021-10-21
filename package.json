@@ -28,6 +28,7 @@
     "git-commit-msg-linter": "^3.2.8",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
+    "react-native-svg-transformer": "^0.14.3",
     "react-test-renderer": "17.0.2",
     "typescript": "^3.8.3"
   },
