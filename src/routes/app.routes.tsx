@@ -103,7 +103,7 @@ const DrawerContent: React.FC<any> = props => {
         />
 
         <DrawerItemWrapperLogOut
-          label={'Log out'}
+          label={'Sair'}
           icon={() =>
             <Feather
               size={22}
