@@ -3,6 +3,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import productDetails from '~/screens/AppScreens/productDetails';
+import productsList from '~/screens/AppScreens/productsList';
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
@@ -23,7 +24,7 @@ export default function PurchasesStack() {
       }}
       initialRouteName="Products"
     >
-      <Screen name="Products" component={productDetails} />
+      <Screen name="Products" component={productsList} />
       <Screen name="ProductsDetails" component={productDetails} />
     </Navigator>
   );
