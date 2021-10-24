@@ -2,12 +2,12 @@ import React from 'react';
 
 import { Container, Title } from './styles';
 
-const productsList = () => {
+const myPurchases = () => {
   return (
     <Container>
-      <Title>Products List</Title>
+      <Title>My Purchases</Title>
     </Container>
   );
 };
 
-export default productsList;
+export default myPurchases;

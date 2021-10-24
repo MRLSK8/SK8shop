@@ -1,6 +1,7 @@
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
+import { Pressable } from 'react-native';
 
 export const Button = styled(BorderlessButton).attrs({
   hitSlop: 20
@@ -24,15 +25,16 @@ import {
 export const DrawerContentContainer = styled(DrawerContentScrollView).attrs({
   showsVerticalScrollIndicator: false
 })`
-  background-color: #156f5f;
+  background-color: ${({ theme }) => theme.colors.dark100};
+  padding-top: 48px;
 `;
 
 export const DrawerItemWrapper = styled(DrawerItem).attrs((props) => {
   return {
     labelStyle: {
       textAlign: "left",
-      // fontFamily: props.theme.fonts.Montserrat.Medium500,
-      color: "#6652f5",
+      fontFamily: props.theme.fonts.Ubuntu.Regular,
+      color: props.theme.colors.white200,
       letterSpacing: 0,
       lineHeight: 21,
       fontSize: 16,
@@ -41,15 +43,10 @@ export const DrawerItemWrapper = styled(DrawerItem).attrs((props) => {
   }
 })``;
 
-export const DrawerItemWrapperLogOut = styled(DrawerItem).attrs((props) => {
+export const DrawerItemWrapperLogOut = styled(DrawerItemWrapper).attrs((props) => {
   return {
     labelStyle: {
-      textAlign: "left",
-      // fontFamily: props.theme.fonts.Montserrat.Medium500,
-      color: "#6F2555",
-      letterSpacing: 0,
-      lineHeight: 21,
-      fontSize: 16,
+      color: props.theme.colors.secondary,
       right: 22,
     }
   }
@@ -57,7 +54,12 @@ export const DrawerItemWrapperLogOut = styled(DrawerItem).attrs((props) => {
 
 export const DrawerHeader = styled.View`
   margin-bottom: 12px;
-  margin-top: -18px;
   padding: 0 24px;
   width: 100%;
+`;
+
+export const MenuButton = styled(Pressable).attrs({
+  hitSlop: 20
+})`
+  padding-left: 24px;
 `;

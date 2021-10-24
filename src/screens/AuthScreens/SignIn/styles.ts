@@ -8,5 +8,5 @@ export const Container = styled.View`
 `;
 
 export const ButtonText = styled.Text`
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.dark};
 `;

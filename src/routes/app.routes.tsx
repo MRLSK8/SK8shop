@@ -1,18 +1,22 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, { useContext } from 'react';
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
+import Feather from 'react-native-vector-icons/Feather';
+import { ThemeContext } from 'styled-components/native';
 
 import {
   createDrawerNavigator,
 } from '@react-navigation/drawer';
 
-import Skateboard from '~/assets/icons/skateboard.svg';
+import { logout } from '~/store/actions/auth/auth.actions';
+import { useAppDispatch } from '~/hooks/reduxHooks';
 import BottomTab from './bottom-tabs.routes';
 
 import {
   DrawerItemWrapperLogOut,
   DrawerContentContainer,
   DrawerItemWrapper,
-  DrawerHeader,
 } from './styles';
 
 const { Navigator, Screen } = createDrawerNavigator();
@@ -35,33 +39,79 @@ export default function DrawerStack() {
 }
 
 const DrawerContent: React.FC<any> = props => {
+  const { colors } = useContext(ThemeContext);
+  const { reset, navigate } = useNavigation();
+  const dispatch = useAppDispatch();
+
+  const handleLogOut = () => {
+    dispatch(logout());
+
+    reset({
+      index: 0,
+      routes: [{
+        name: 'AuthStack'
+      }]
+    });
+  }
+
+  const handleNavigation = (stack: string, deepStack?: any) => {
+    if (deepStack) {
+      // @ts-ignore
+      navigate(stack, deepStack);
+    } else {
+      // @ts-ignore
+      navigate(stack);
+    }
+  }
 
   return (
     <>
       <DrawerContentContainer {...props}>
-        <DrawerHeader>
-          <Text>
-            Header
-          </Text>
-        </DrawerHeader>
-
         <DrawerItemWrapper
-          label={'Feed'}
+          label={'Home'}
           style={{
             marginTop: 8
           }}
           icon={() =>
-            <Skateboard fill={'#f15f55'} />
+            <Feather
+              size={22}
+              name={'home'}
+              color={colors.white200}
+            />
           }
-          onPress={() => { }}
+          onPress={() =>
+            handleNavigation(
+              'ProductsStack',
+              { screen: 'Products' }
+            )}
+        />
+
+        <DrawerItemWrapper
+          label={'Meus Pedidos'}
+          style={{
+            marginTop: 8
+          }}
+          icon={() =>
+            <Ionicons
+              size={22}
+              name={'list-outline'}
+              color={colors.white200}
+            />
+          }
+          onPress={() =>
+            handleNavigation('MyPurchasesStack')}
         />
 
         <DrawerItemWrapperLogOut
           label={'Log out'}
           icon={() =>
-            <Skateboard fill={'#d5df55'} />
+            <Feather
+              size={22}
+              name={'log-out'}
+              color={colors.secondary}
+            />
           }
-          onPress={() => { }}
+          onPress={handleLogOut}
         />
       </DrawerContentContainer>
     </>

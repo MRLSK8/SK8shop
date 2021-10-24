@@ -11,9 +11,10 @@ declare module 'styled-components' {
 
       white: string,
       white100: string,
+      white200: string,
 
-      black: string,
-      black100: string,
+      dark: string,
+      dark100: string,
     },
     fonts: {
       Ubuntu: {

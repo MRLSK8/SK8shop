@@ -3,14 +3,15 @@ export default {
     primary: '#156220',
     primary100: '#156230',
 
-    secondary: '#0552d0',
+    secondary: '#c92033',
     secondary100: '#5556f8',
 
     white: '#fff',
     white100: '#f0f0f0',
+    white200: '#ffffff85',
 
-    black: '#000',
-    black100: '#000',
+    dark: '#000',
+    dark100: '#171c2b',
   },
   fonts: {
     Ubuntu: {
