@@ -1,4 +1,5 @@
 import { AUTH_ACTIONS_REQUEST } from './types.action';
+import { UserProps } from '~/store/ducks/auth.reducer';
 
 export const registrationAsync = (
   password: string,
@@ -13,7 +14,7 @@ export const registrationAsync = (
   }
 });
 
-export const registrationSuccess = (data: any) => ({
+export const registrationSuccess = (data: UserProps) => ({
   type: AUTH_ACTIONS_REQUEST.REGISTRATION_SUCCESS,
   payload: {
     data
@@ -30,7 +31,7 @@ export const loginAsync = (email: string, password: string) => ({
   }
 });
 
-export const loginSuccess = (data: any) => ({
+export const loginSuccess = (data: UserProps) => ({
   type: AUTH_ACTIONS_REQUEST.LOGIN_SUCCESS,
   payload: {
     data

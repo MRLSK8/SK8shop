@@ -61,5 +61,30 @@ export const DrawerHeader = styled.View`
 export const MenuButton = styled(Pressable).attrs({
   hitSlop: 20
 })`
-  padding-left: 24px;
+  margin-left: 24px;
+`;
+
+export const CartButton = styled(Pressable).attrs({
+  hitSlop: 20
+})`
+  margin-right: 28px;
+  position: relative;
+`;
+
+export const CartQuantity = styled.View<{ withPlus?: boolean }>`
+  background-color: ${({ theme }) => theme.colors.secondary};
+  height: ${props => props.withPlus ? 18 : 16}px;
+  width: ${props => props.withPlus ? 18 : 16}px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: absolute;
+  right: -5px;
+  top: -3px;
+`;
+
+export const CartQuantityLabel = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 10px;
 `;

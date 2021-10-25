@@ -2,6 +2,12 @@ import { AUTH_ACTIONS_REQUEST } from './../actions/auth/types.action';
 import { Action } from '../types';
 import { produce } from 'immer';
 
+export interface UserProps {
+  email: string,
+  token: string,
+  name: string,
+}
+
 interface AuthProps {
   isAuthenticated: boolean,
   isLoading: boolean,
@@ -10,11 +16,7 @@ interface AuthProps {
     message: string,
   },
   data: {
-    user: {
-      email: string,
-      token: string,
-      name: string,
-    }
+    user: UserProps
   },
 }
 

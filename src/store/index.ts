@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
+
 import rootReducers from './ducks';
 import sagas from './sagas';
 
@@ -10,11 +11,10 @@ const middlewares = [];
 const persistConfig = {
   key: "@sk8shop",
   storage: AsyncStorage,
-  whitelist: ["auth"],
+  whitelist: ["auth", 'cart'],
 }
 
 const peristedReducer = persistReducer(persistConfig, rootReducers);
-
 
 const sagaMiddleware = createSagaMiddleware();
 

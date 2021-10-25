@@ -102,6 +102,22 @@ const DrawerContent: React.FC<any> = props => {
             handleNavigation('MyPurchasesStack')}
         />
 
+        <DrawerItemWrapper
+          label={'Meu Carrinho'}
+          style={{
+            marginTop: 8
+          }}
+          icon={() =>
+            <Ionicons
+              size={22}
+              name={'ios-cart-outline'}
+              color={colors.white200}
+            />
+          }
+          onPress={() =>
+            handleNavigation('ShoppingCart')}
+        />
+
         <DrawerItemWrapperLogOut
           label={'Sair'}
           icon={() =>
