@@ -13,10 +13,6 @@ import { Container, Title } from './styles';
 const ShoppingCart = () => {
   const dispatch = useAppDispatch();
 
-  const handleAddProductToCart = () => {
-    dispatch(addProductToCart({ id: 'f1d5fa5ehf', name: 'kfajd', price: 15.8 }))
-  }
-
   const handleRemoveProductFromCart = () => {
     dispatch(removeProductFromCart('f1d5fa5ehf'))
   }
@@ -27,13 +23,7 @@ const ShoppingCart = () => {
 
   return (
     <Container>
-      <TouchableOpacity
-        style={{ marginTop: 8 }}
-        onPress={handleAddProductToCart}
-      >
-        <Title>Add item</Title>
-      </TouchableOpacity>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={{ marginTop: 8 }}
         onPress={handleRemoveProductFromCart}
       >
@@ -43,8 +33,11 @@ const ShoppingCart = () => {
         style={{ marginTop: 8 }}
         onPress={handleRemoveAllProductsFromCart}
       >
-        <Title>Remove all item</Title>
-      </TouchableOpacity>
+        <Title>Shopping cart</Title>
+      </TouchableOpacity> */}
+
+      <Title>Shopping cart</Title>
+
     </Container>
   );
 };

@@ -1,10 +1,10 @@
 export default {
   colors: {
-    primary: '#156220',
-    primary100: '#156230',
+    primary: '#62C370',
 
     secondary: '#c92033',
-    secondary100: '#5556f8',
+
+    tertiary: '#fd840e',
 
     white: '#fff',
     white100: '#f0f0f0',

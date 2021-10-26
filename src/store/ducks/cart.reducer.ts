@@ -4,6 +4,8 @@ import { produce } from 'immer';
 
 export interface ProductProps {
   SupplierWarranty: string,
+  countryOfOrigin: string,
+  TypeOfShipping: string,
   previousPrice: number,
   description: string,
   price: number,

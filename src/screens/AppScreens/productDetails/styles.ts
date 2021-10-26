@@ -1,13 +1,76 @@
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import FastImage from 'react-native-fast-image';
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   background-color: ${({ theme }) => theme.colors.white200};
-  justify-content: center;
-  align-items: center;
   flex: 1;
 `;
 
+export const Image = styled(FastImage).attrs({
+  resizeMode: 'cover'
+})`
+  height: 180px;
+  width: 100%;
+`;
+
 export const Title = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.Ubuntu.BoldItalic};
-  color: ${({ theme }) => theme.colors.secondary};
+  font-family: ${({ theme }) => theme.fonts.Ubuntu.Bold};
+  color: ${({ theme }) => theme.colors.dark200};
+  margin: 16px 0 14px 16px;
+  letter-spacing: 2px;
+  line-height: 28px;
+  font-size: 26px;
+`;
+
+export const Description = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
+  color: ${({ theme }) => theme.colors.dark200};
+  margin: 8px 0 8px 16px;
+  line-height: 24px;
+  font-size: 18px;
+`;
+
+export const AddToCartButton = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7
+}) <{ isAlreadyInTheCart: boolean }>`
+  background-color: ${(props) =>
+    props.isAlreadyInTheCart ? props.theme.colors.tertiary : props.theme.colors.primary};
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  align-self: center;
+  border-radius: 6px;
+  padding: 0 14px;
+  margin-top: 64px;
+  height: 48px;
+  width: 80%;
+`;
+
+export const AddToCartButtonLabel = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
+  color: ${({ theme }) => theme.colors.white100};
+  text-transform: uppercase;
+  margin-right: 8px;
+`;
+
+export const ShoppingCartIcon = styled(Ionicons).attrs(props => {
+  return {
+    color: props.theme.colors.white200,
+    name: 'ios-cart-outline',
+    size: 20,
+  }
+})``;
+
+export const PreviousProductPrice = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.Ubuntu.Italic};
+  color: ${({ theme }) => theme.colors.white300};
+  text-decoration: line-through;
+  font-size: 20px;
+`;
+
+export const ProductPrice = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
+  color: ${({ theme }) => theme.colors.dark200};
+  font-size: 32px;
 `;
