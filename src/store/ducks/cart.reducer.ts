@@ -3,9 +3,14 @@ import { Action } from '../types';
 import { produce } from 'immer';
 
 export interface ProductProps {
-  id: string,
-  name: string,
+  SupplierWarranty: string,
+  previousPrice: number,
+  description: string,
   price: number,
+  image: string,
+  color: string,
+  name: string,
+  id: string,
 }
 
 interface CartProps {
@@ -13,13 +18,7 @@ interface CartProps {
 }
 
 const INITIAL_STATE: CartProps = {
-  products: [
-    {
-      id: 'f6f5f51',
-      name: 'Skate',
-      price: 15.58
-    }
-  ],
+  products: [],
 }
 
 const cartReducer = (state = INITIAL_STATE, action: Action) => {
