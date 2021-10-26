@@ -2,7 +2,12 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FastImage from 'react-native-fast-image';
 import styled from 'styled-components/native';
 
-export const Container = styled.ScrollView`
+export const Container = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+    paddingBottom: 18,
+  }
+})`
   background-color: ${({ theme }) => theme.colors.white200};
   flex: 1;
 `;
@@ -51,6 +56,7 @@ export const AddToCartButtonLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
   color: ${({ theme }) => theme.colors.white100};
   text-transform: uppercase;
+  letter-spacing: 1px;
   margin-right: 8px;
 `;
 

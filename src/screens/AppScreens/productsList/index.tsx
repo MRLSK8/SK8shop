@@ -40,7 +40,7 @@ const productsList = () => {
       {
         id: '15f6f516',
         name: 'Truck',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
+        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.\n\nOs novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável.',
         image: 'https://images.unsplash.com/photo-1547447134-cd3f5c716030?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80',
         price: 259.9,
         previousPrice: 279.99,
@@ -52,7 +52,7 @@ const productsList = () => {
       {
         id: '15f6f516',
         name: 'Roda Black Sheep',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
+        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance. Os novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável.',
         image: 'https://images.unsplash.com/photo-1478427433968-28045906c1dd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2thdGV8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
         price: 79.99,
         previousPrice: 209.99,
@@ -76,7 +76,7 @@ const productsList = () => {
       {
         id: '11e66f566s',
         name: 'Lixa Jessup',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
+        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.\n\nOs novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável.',
         image: 'https://images.unsplash.com/photo-1585027946577-16a57e32daae?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNrYXRlYm9hcmRpbmd8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
         price: 18.29,
         previousPrice: 25.50,
@@ -88,7 +88,7 @@ const productsList = () => {
       {
         id: '11w651fe6',
         name: 'Skate semi-profissional',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
+        description: 'Os novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável.\n\nOs skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
         image: 'https://images.unsplash.com/photo-1605674136763-99ac629b8211?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDh8fHNrYXRlYm9hcmRpbmd8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
         price: 451.78,
         previousPrice: 525.68,
@@ -100,7 +100,7 @@ const productsList = () => {
       {
         id: 'g65uk65516',
         name: 'Cruiser',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
+        description: 'Os novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável. Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
         image: 'https://images.unsplash.com/photo-1608610479260-135933538b00?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzIxfHxza2F0ZWJvYXJkaW5nfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
         price: 169.9,
         previousPrice: 328.68,
@@ -112,7 +112,7 @@ const productsList = () => {
       {
         id: 'jy5165ul',
         name: 'Skate Profissional completo',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
+        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.\n\nO ideal é que você faça um revezamento, trocando sempre a posição das rodas para que elas sejam desgastadas igualmente.',
         image: 'https://media.istockphoto.com/photos/skateboarding-jumping-at-sunrise-picture-id465492606?b=1&k=20&m=465492606&s=170667a&w=0&h=CXlGdocIn9EJnhLTKYFHTKcUGE4Lf5UVtbHgBDBS_RE=',
         price: 349.49,
         previousPrice: 689.28,

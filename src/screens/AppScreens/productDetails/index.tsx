@@ -44,7 +44,9 @@ const productDetails = () => {
       <ScreenHeader />
       <Container>
         <Image source={{ uri: productData.image }} />
+
         <Title>{productData.name}</Title>
+
         <Description>{productData.description}</Description>
 
         <Description>
