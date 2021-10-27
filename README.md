@@ -111,6 +111,9 @@ The file structure are in the following way:
 │   │   ├── GoBackButton/
 |   |   |   ├── index.tsx
 |   |   |   └── style.ts
+|   |   ├── ImagePreview/ 
+|   |   |   ├── index.tsx
+|   |   |   └── style.ts
 |   |   ├── ProductItem/ 
 |   |   |   ├── index.tsx
 |   |   |    style.ts
