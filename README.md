@@ -48,6 +48,7 @@ Objective:
 :white_check_mark: Vector Icons\
 :white_check_mark: Immer\
 :white_check_mark: Lodash\
+:white_check_mark: lottie-react-native\
 :white_check_mark: react-native-paper\
 :white_check_mark: react-native-image-pan-zoom\
 :white_check_mark: Date-fns\
