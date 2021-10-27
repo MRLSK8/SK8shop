@@ -15,13 +15,14 @@
 ## About the project:
 
 <div>
-  <img src="assets/images/image0.jpg" width="250" height="480"/>
-  <img src="assets/images/image1.gif" width="250" height="480"/>
-  <img src="assets/images/image2.gif" width="250" height="480"/>
-  <img src="assets/images/image3.gif" width="250" height="480"/>
-  <img src="assets/images/image4.gif" width="250" height="480"/>
-  <img src="assets/images/image5.gif" width="250" height="480"/>
-  <img src="assets/images/image6.gif" width="250" height="480"/>
+  <img src="assets/images/image0.jpg" width="250" height="500"/>
+  <img src="assets/images/image1.gif" width="250" height="500"/>
+  <img src="assets/images/image2.gif" width="250" height="500"/>
+  <img src="assets/images/image3.gif" width="250" height="500"/>
+  <img src="assets/images/image4.gif" width="250" height="500"/>
+  <img src="assets/images/image5.gif" width="250" height="500"/>
+  <img src="assets/images/image6.gif" width="250" height="500"/>
+  <img src="assets/images/image7.gif" width="250" height="500"/>
 </div>
 
 Project developed with React Native, with the purpose of simulating a skateshop.
