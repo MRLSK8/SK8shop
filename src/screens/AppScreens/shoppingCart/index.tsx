@@ -1,10 +1,15 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { format } from 'date-fns';
 
 import { useAppDispatch, useAppSelector } from '~/hooks/reduxHooks';
 import { numberToCurrency } from '~/helpers/numberToCurrency';
 import { ProductProps } from '~/store/ducks/cart.reducer';
 import ScreenHeader from '~/components/ScreenHeader';
+
+import {
+  addProductsToPurchases
+} from '~/store/actions/purchases/purchases.actions';
 
 import {
   removeAllProductsFromCart,
@@ -20,6 +25,7 @@ import {
   RemoveItemButton,
   ContentWrapper,
   EmptyCartLabel,
+  NumberOfItems,
   TrashCanIcon,
   ProductPrice,
   PriceWrapper,
@@ -47,8 +53,15 @@ const ShoppingCart = () => {
     dispatch(removeAllProductsFromCart())
   }
 
-  const handleNavigateToMyPurchases = () => {
+  const handleFinishPurchase = (products: ProductProps[]) => {
     handleRemoveAllProductsFromCart();
+    const purchases = products.map(product =>
+    ({
+      ...product, purchaseNumber: products.length,
+      purchaseDate: format(new Date(), 'dd/MM/yyyy hh:mm:ss')
+    }));
+
+    dispatch(addProductsToPurchases(purchases));
     // @ts-ignore
     navigate('MyPurchasesStack');
   }
@@ -67,7 +80,11 @@ const ShoppingCart = () => {
     <SafeAreaViewWrapper>
       <ScreenHeader />
       <Container>
-        <Title>Meu Carrinho</Title>
+        <Title>
+          Meu Carrinho {''}
+          <NumberOfItems>({products.length}) {products.length > 1 ? 'itens' : 'item'}
+          </NumberOfItems>
+        </Title>
 
         {
           products.map(product => (
@@ -98,6 +115,7 @@ const ShoppingCart = () => {
             </Product>
           ))
         }
+
         {
           !products.length && (
             <EmptyCartLabel>
@@ -111,7 +129,7 @@ const ShoppingCart = () => {
         </TotalValue>
         <FinishPurchaseButton
           disabled={!products?.length}
-          onPress={handleNavigateToMyPurchases}
+          onPress={() => handleFinishPurchase(products)}
         >
           <FinishPurchaseButtonLabel>
             Finalizar compra

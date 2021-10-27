@@ -137,3 +137,5 @@ export const TrashCanIcon = styled(Ionicons).attrs(props => {
   margin-right: 8px;
   margin-top: 4px;
 `;
+
+export const NumberOfItems = styled(ProductName)``;

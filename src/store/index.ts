@@ -11,7 +11,7 @@ const middlewares = [];
 const persistConfig = {
   key: "@sk8shop",
   storage: AsyncStorage,
-  whitelist: ["auth", 'cart'],
+  whitelist: ["auth", 'cart', 'purchases'],
 }
 
 const peristedReducer = persistReducer(persistConfig, rootReducers);

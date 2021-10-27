@@ -83,7 +83,7 @@ const productsList = () => {
         countryOfOrigin: 'China',
         TypeOfShipping: 'Marketplace',
         color: 'Azul',
-        SupplierWarranty: '1 meses'
+        SupplierWarranty: '4 meses'
       },
       {
         id: '11w651fe6',
@@ -95,7 +95,7 @@ const productsList = () => {
         countryOfOrigin: 'China',
         TypeOfShipping: 'Marketplace',
         color: 'Azul',
-        SupplierWarranty: '1 meses'
+        SupplierWarranty: '1 mês'
       },
       {
         id: 'g65uk65516',
@@ -143,7 +143,7 @@ const productsList = () => {
         countryOfOrigin: 'Chile',
         TypeOfShipping: 'Marketplace',
         color: 'Azul',
-        SupplierWarranty: '1 meses'
+        SupplierWarranty: '2 meses'
       },
       {
         id: 'jy515ku651fe6',
@@ -155,7 +155,7 @@ const productsList = () => {
         countryOfOrigin: 'Chile',
         TypeOfShipping: 'Marketplace',
         color: 'Azul',
-        SupplierWarranty: '1 meses'
+        SupplierWarranty: '5 meses'
       },
       {
         id: '9ee166jgr8933',
@@ -167,7 +167,7 @@ const productsList = () => {
         countryOfOrigin: 'Chile',
         TypeOfShipping: 'Marketplace',
         color: 'Azul',
-        SupplierWarranty: '1 meses'
+        SupplierWarranty: '1 mês'
       },
       {
         id: 'g51kugr526',
@@ -179,7 +179,7 @@ const productsList = () => {
         countryOfOrigin: 'Brasil',
         TypeOfShipping: 'Marketplace',
         color: 'Azul',
-        SupplierWarranty: '1 meses'
+        SupplierWarranty: '3 meses'
       },
       {
         id: '02gr616h5htth306',
@@ -191,7 +191,7 @@ const productsList = () => {
         countryOfOrigin: 'Italia',
         TypeOfShipping: 'Marketplace',
         color: 'Azul',
-        SupplierWarranty: '1 meses'
+        SupplierWarranty: '4 meses'
       }
     ]);
   }, []);
