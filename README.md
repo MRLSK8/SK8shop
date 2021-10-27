@@ -63,7 +63,7 @@ Before proceeding, it is ideal that you have the environment set up to create ap
 #### First you clone the project:
 
 ```bash
-$ git clone https://github.com/MRLSK8/SK8shop.git && cd Pokedex
+$ git clone https://github.com/MRLSK8/SK8shop.git && cd SK8shop
 ```
 
 #### Then you run the following command to install packages:
