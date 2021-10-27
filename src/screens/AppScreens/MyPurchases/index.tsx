@@ -22,6 +22,7 @@ import {
   Description,
   ProductName,
   Product,
+  Title,
   Image,
 } from './styles';
 
@@ -44,6 +45,9 @@ const myPurchases = () => {
   return (
     <SafeAreaViewWrapper>
       <ScreenHeader />
+      <Title>
+        Meus pedidos
+      </Title>
       <Container>
         {
           products.map(product => (

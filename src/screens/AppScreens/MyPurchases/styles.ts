@@ -6,6 +6,8 @@ import { Pressable } from 'react-native';
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.BoldItalic};
   color: ${({ theme }) => theme.colors.secondary};
+  font-size: 18px;
+  margin: 12px;
 `;
 
 export const Image = styled(FastImage).attrs({
@@ -26,8 +28,8 @@ export const ProductName = styled.Text.attrs({
 `;
 
 export const ContentWrapper = styled.View`
+  padding: 8px 0 12px 0;
   margin: 0 8px 0 12px;
-  padding: 12px 0;
   flex: 1;
 `;
 
@@ -42,11 +44,12 @@ export const Description = styled.Text.attrs({
 `;
 
 export const RemoveItemButton = styled(Pressable).attrs({
-  hitslop: 20
+  hitslop: 30
 })`
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  padding: 8px;
 `;
 
 export const Product = styled.TouchableOpacity.attrs({

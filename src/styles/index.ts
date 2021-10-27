@@ -14,6 +14,7 @@ export const Container = styled.ScrollView.attrs({
 `;
 
 export const SafeAreaViewWrapper = styled.SafeAreaView`
+  background-color: ${({ theme }) => theme.colors.white200};
   flex: 1;
 `;
 
