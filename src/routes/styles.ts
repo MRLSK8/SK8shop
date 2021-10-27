@@ -61,7 +61,7 @@ export const DrawerHeader = styled.View`
 export const MenuButton = styled(Pressable).attrs({
   hitSlop: 20
 })`
-  margin-left: 14px;
+  margin-left: 10px;
 `;
 
 export const CartButton = styled(Pressable).attrs({

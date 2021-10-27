@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
@@ -9,7 +9,7 @@ import { numberToCurrency } from '~/helpers/numberToCurrency';
 import { ProductProps } from '~/store/ducks/cart.reducer';
 import ScreenHeader from '~/components/ScreenHeader';
 
-import { SafeAreaViewWrapper } from '~/styles';
+import { Container, SafeAreaViewWrapper } from '~/styles';
 import {
   AddToCartButtonLabel,
   PreviousProductPrice,
@@ -17,7 +17,6 @@ import {
   AddToCartButton,
   ProductPrice,
   Description,
-  Container,
   Title,
   Image,
 } from './styles';

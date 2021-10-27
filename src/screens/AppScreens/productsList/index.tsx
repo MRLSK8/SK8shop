@@ -163,7 +163,7 @@ const productsList = () => {
         description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
         image: 'https://images.unsplash.com/photo-1483378255583-fd248d0e6a98?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjk2fHxza2F0ZWJvYXJkaW5nfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
         price: 147.81,
-        previousPrice: 60.20,
+        previousPrice: 160.20,
         countryOfOrigin: 'Chile',
         TypeOfShipping: 'Marketplace',
         color: 'Azul',

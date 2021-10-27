@@ -2,16 +2,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FastImage from 'react-native-fast-image';
 import styled from 'styled-components/native';
 
-export const Container = styled.ScrollView.attrs({
-  showsVerticalScrollIndicator: false,
-  contentContainerStyle: {
-    paddingBottom: 32,
-  }
-})`
-  background-color: ${({ theme }) => theme.colors.white200};
-  flex: 1;
-`;
-
 export const Image = styled(FastImage).attrs({
   resizeMode: 'cover'
 })`

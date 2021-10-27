@@ -46,12 +46,12 @@ const DrawerContent: React.FC<any> = props => {
   const handleLogOut = () => {
     dispatch(logout());
 
-    reset({
-      index: 0,
-      routes: [{
-        name: 'AuthStack'
-      }]
-    });
+    // reset({
+    //   index: 0,
+    //   routes: [{
+    //     name: 'AuthStack'
+    //   }]
+    // });
   }
 
   const handleNavigation = (stack: string, deepStack?: any) => {

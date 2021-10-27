@@ -3,6 +3,16 @@ import { StyleSheet } from 'react-native';
 
 export const EmptyView = styled.View``;
 
+export const Container = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+    paddingBottom: 32,
+  }
+})`
+  background-color: ${({ theme }) => theme.colors.white200};
+  flex: 1;
+`;
+
 export const SafeAreaViewWrapper = styled.SafeAreaView`
   flex: 1;
 `;

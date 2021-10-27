@@ -33,7 +33,7 @@ const cartReducer = (state = INITIAL_STATE, action: Action) => {
         break;
       case CART_ACTIONS_REQUEST.REMOVE_PRODUCT_FROM_CART:
         if (action.payload?.data?.id) {
-          draft.products.splice(action.payload.data.id, 1);
+          draft.products = draft.products.filter((product) => product.id !== action.payload?.data?.id);
         }
         break;
       case CART_ACTIONS_REQUEST.REMOVE_ALL_PRODUCTS_FROM_CART:

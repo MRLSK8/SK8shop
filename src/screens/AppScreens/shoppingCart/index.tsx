@@ -1,44 +1,124 @@
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import React, { useLayoutEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
-import { useAppDispatch } from '~/hooks/reduxHooks';
+import { useAppDispatch, useAppSelector } from '~/hooks/reduxHooks';
+import { numberToCurrency } from '~/helpers/numberToCurrency';
+import { ProductProps } from '~/store/ducks/cart.reducer';
+import ScreenHeader from '~/components/ScreenHeader';
+
 import {
   removeAllProductsFromCart,
   removeProductFromCart,
-  addProductToCart,
 } from '~/store/actions/shoppingCart/cart.actions';
 
-import { Container, Title } from './styles';
+import { Container, SafeAreaViewWrapper, styles } from '~/styles';
+import {
+  FinishPurchaseButtonLabel,
+  RemoveItemButtonLabel,
+  FinishPurchaseButton,
+  PreviousProductPrice,
+  RemoveItemButton,
+  ContentWrapper,
+  EmptyCartLabel,
+  TrashCanIcon,
+  ProductPrice,
+  PriceWrapper,
+  Description,
+  ProductName,
+  TotalValue,
+  Product,
+  Image,
+  Title,
+} from './styles';
 
 const ShoppingCart = () => {
+  const products = useAppSelector(state => state.cart.products);
+  const [totalValue, setTotalValue] = useState(0);
+  const { navigate } = useNavigation();
   const dispatch = useAppDispatch();
 
-  const handleRemoveProductFromCart = () => {
-    dispatch(removeProductFromCart('f1d5fa5ehf'))
+  const handleRemoveProductFromCart = (productId: string) => {
+    if (!productId) return;
+
+    dispatch(removeProductFromCart(productId))
   }
 
   const handleRemoveAllProductsFromCart = () => {
     dispatch(removeAllProductsFromCart())
   }
 
+  const handleNavigateToMyPurchases = () => {
+    handleRemoveAllProductsFromCart();
+    // @ts-ignore
+    navigate('MyPurchasesStack');
+  }
+
+  const handleGoToProductDetails = (productData: ProductProps) => {
+    // @ts-ignore
+    navigate('ProductsDetails', { productData });
+  };
+
+  useLayoutEffect(() => {
+    const totalValue = products.reduce((totalValue, currentValue) => totalValue + currentValue.price, 0);
+    setTotalValue(totalValue);
+  }, [products]);
+
   return (
-    <Container>
-      {/* <TouchableOpacity
-        style={{ marginTop: 8 }}
-        onPress={handleRemoveProductFromCart}
-      >
-        <Title>Remove item</Title>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{ marginTop: 8 }}
-        onPress={handleRemoveAllProductsFromCart}
-      >
-        <Title>Shopping cart</Title>
-      </TouchableOpacity> */}
+    <SafeAreaViewWrapper>
+      <ScreenHeader />
+      <Container>
+        <Title>Meu Carrinho</Title>
 
-      <Title>Shopping cart</Title>
+        {
+          products.map(product => (
+            <Product
+              key={product.id}
+              onPress={() => handleGoToProductDetails(product)}
+              style={styles.shadow}
+            >
+              <Image source={{ uri: product.image }} />
+              <ContentWrapper>
+                <ProductName>
+                  {product.name}
+                </ProductName>
+                <Description>
+                  {product.description}
+                </Description>
+                <PriceWrapper>
+                  <PreviousProductPrice>{numberToCurrency(product.previousPrice)}</PreviousProductPrice>
+                  <ProductPrice> {numberToCurrency(product.price)}</ProductPrice>
+                </PriceWrapper>
+                <RemoveItemButton
+                  onPress={() => handleRemoveProductFromCart(product.id)}
+                >
+                  <TrashCanIcon />
+                  <RemoveItemButtonLabel>Remover produto</RemoveItemButtonLabel>
+                </RemoveItemButton>
+              </ContentWrapper>
+            </Product>
+          ))
+        }
+        {
+          !products.length && (
+            <EmptyCartLabel>
+              Seu carrinho está vazio..
+            </EmptyCartLabel>
+          )
+        }
 
-    </Container>
+        <TotalValue>
+          Total: {numberToCurrency(totalValue)}
+        </TotalValue>
+        <FinishPurchaseButton
+          disabled={!products?.length}
+          onPress={handleNavigateToMyPurchases}
+        >
+          <FinishPurchaseButtonLabel>
+            Finalizar compra
+          </FinishPurchaseButtonLabel>
+        </FinishPurchaseButton>
+      </Container>
+    </SafeAreaViewWrapper>
   );
 };
 

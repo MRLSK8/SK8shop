@@ -50,4 +50,5 @@ export const PreviousProductPrice = styled(ProductPrice)`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Italic};
   color: ${({ theme }) => theme.colors.white300};
   text-decoration: line-through;
+  padding: 0 2px;
 `;

@@ -27,7 +27,7 @@ export default function Routes() {
         screenOptions={{
           headerShown: false
         }}
-        initialRouteName={isAuthenticated ? "AppStack" : "AuthStack"}
+        initialRouteName={true ? "AppStack" : "AuthStack"}
       >
         <Screen name="AppStack" component={AppStack} />
         <Screen name="AuthStack" component={AuthStack} />
