@@ -13,6 +13,7 @@ import { Container, SafeAreaViewWrapper } from '~/styles';
 import {
   AddToCartButtonLabel,
   PreviousProductPrice,
+  ImageButtonWrapper,
   ShoppingCartIcon,
   AddToCartButton,
   ProductPrice,
@@ -38,11 +39,21 @@ const productDetails = () => {
     navigate('ShoppingCart');
   }
 
+  const handleGoToImagePreview = (imageUri: string) => {
+    if (!imageUri) return;
+    // @ts-ignore
+    navigate('ImagePreview', { imageUri });
+  }
+
   return (
     <SafeAreaViewWrapper>
       <ScreenHeader />
       <Container>
-        <Image source={{ uri: productData.image }} />
+        <ImageButtonWrapper
+          onPress={() => handleGoToImagePreview(productData.image)}
+        >
+          <Image source={{ uri: productData.image }} />
+        </ImageButtonWrapper>
 
         <Title>{productData.name}</Title>
 

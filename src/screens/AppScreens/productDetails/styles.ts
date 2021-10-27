@@ -1,6 +1,7 @@
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FastImage from 'react-native-fast-image';
 import styled from 'styled-components/native';
+import { Pressable } from 'react-native';
 
 export const Image = styled(FastImage).attrs({
   resizeMode: 'cover'
@@ -69,4 +70,8 @@ export const ProductPrice = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
   color: ${({ theme }) => theme.colors.dark200};
   font-size: 32px;
+`;
+
+export const ImageButtonWrapper = styled(Pressable)`
+
 `;
