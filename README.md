@@ -111,10 +111,10 @@ The file structure are in the following way:
 |   |   |   └── style.ts
 |   |   ├── ProductItem/ 
 |   |   |   ├── index.tsx
-|   |   |   └── style.ts
-│   │   ├── ScreenHeader/
-|   |   |   ├── index.tsx
-|   |   |   └── style.ts
+|   |   |    style.ts
+│   │   └── ScreenHeader/
+|   |       ├── index.tsx
+|   |       └── style.ts
 │   ├── config/
 │   │   └── statusBarConfig.ts
 │   ├── helpers/
