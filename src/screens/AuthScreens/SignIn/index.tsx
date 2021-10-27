@@ -8,7 +8,7 @@ import { useAppDispatch } from '~/hooks/reduxHooks';
 import { Container, ButtonText } from './styles';
 import { loginAsync } from '~/store/actions/auth/auth.actions';
 
-const SignIn = () => {
+const signIn = () => {
   const { reset } = useNavigation();
   const dispatch = useAppDispatch();
 
@@ -32,4 +32,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default signIn;

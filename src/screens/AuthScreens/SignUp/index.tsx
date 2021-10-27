@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 
 import { Container } from './styles';
 
-const SignUp = () => {
+const signUp = () => {
   return (
     <Container>
       <Text>SignUp</Text>
@@ -12,4 +12,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default signUp;
