@@ -50,6 +50,8 @@ Objective:
 :white_check_mark: Lodash\
 :white_check_mark: lottie-react-native\
 :white_check_mark: react-native-paper\
+:white_check_mark: moti\
+:white_check_mark: react-native-reanimated\
 :white_check_mark: react-native-image-pan-zoom\
 :white_check_mark: Date-fns\
 :white_check_mark: react-native-fast-image\
