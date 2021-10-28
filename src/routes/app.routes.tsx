@@ -4,6 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import Feather from 'react-native-vector-icons/Feather';
 import { ThemeContext } from 'styled-components/native';
+import LottieView from 'lottie-react-native';
 
 import {
   createDrawerNavigator,
@@ -17,6 +18,8 @@ import {
   DrawerItemWrapperLogOut,
   DrawerContentContainer,
   DrawerItemWrapper,
+  WrapperAnimated,
+  DrawerHeader,
 } from './styles';
 
 const { Navigator, Screen } = createDrawerNavigator();
@@ -46,12 +49,12 @@ const DrawerContent: React.FC<any> = props => {
   const handleLogOut = () => {
     dispatch(logout());
 
-    // reset({
-    //   index: 0,
-    //   routes: [{
-    //     name: 'AuthStack'
-    //   }]
-    // });
+    reset({
+      index: 0,
+      routes: [{
+        name: 'AuthStack'
+      }]
+    });
   }
 
   const handleNavigation = (stack: string, deepStack?: any) => {
@@ -67,6 +70,15 @@ const DrawerContent: React.FC<any> = props => {
   return (
     <>
       <DrawerContentContainer {...props}>
+        <DrawerHeader>
+          <WrapperAnimated>
+            <LottieView
+              source={require('~/assets/lottieFiles/skateboarding.json')}
+              autoPlay
+              loop
+            />
+          </WrapperAnimated>
+        </DrawerHeader>
         <DrawerItemWrapper
           label={'Home'}
           style={{

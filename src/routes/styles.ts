@@ -2,6 +2,7 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 import { Pressable } from 'react-native';
+import { MotiView } from 'moti';
 
 export const Button = styled(BorderlessButton).attrs({
   hitSlop: 20
@@ -52,9 +53,31 @@ export const DrawerItemWrapperLogOut = styled(DrawerItemWrapper).attrs((props) =
   }
 })``;
 
+export const WrapperAnimated = styled(MotiView).attrs({
+  from: {
+    opacity: 1,
+    left: -40,
+  },
+  animate: {
+    opacity: 0,
+    left: 350,
+  },
+  transition: {
+    type: "timing",
+    loop: true,
+    repeatReverse: false,
+    duration: 5000
+  },
+})`
+  height: 50px;
+  width: 50px;
+`;
+
 export const DrawerHeader = styled.View`
+  border-bottom-color: ${({ theme }) => theme.colors.white};    
+  border-bottom-width: 0.5px;
   margin-bottom: 12px;
-  padding: 0 24px;
+  height: 50px;
   width: 100%;
 `;
 
