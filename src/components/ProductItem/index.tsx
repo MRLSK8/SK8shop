@@ -21,16 +21,17 @@ interface ProductItemProps {
 const ProductItem: React.FC<ProductItemProps> = ({ productData, callback }) => {
   return (
     <Container
+      testID="product-item-btn"
       onPress={() => callback(productData)}
       style={styles.shadow}
     >
       <Image source={{ uri: productData.image }} />
-      <Title>{productData.name}</Title>
+      <Title testID="title">{productData.name}</Title>
       <PriceWrapper>
         <PreviousProductPrice>{numberToCurrency(productData.previousPrice)}</PreviousProductPrice>
         <ProductPrice> {numberToCurrency(productData.price)}</ProductPrice>
       </PriceWrapper>
-    </Container>
+    </Container >
   );
 };
 

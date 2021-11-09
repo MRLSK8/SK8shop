@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Text, TextInput, Button } from 'react-native';
 import { Container } from './styles';
 
-const TestScreen = () => {
+const testScreen = () => {
   const [lastName, setLastName] = useState('');
   const [name, setName] = useState('');
 
@@ -34,4 +34,4 @@ const TestScreen = () => {
   );
 };
 
-export default TestScreen;
+export default testScreen;

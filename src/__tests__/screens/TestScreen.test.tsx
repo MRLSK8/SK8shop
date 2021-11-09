@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react-native';
-import TestScreen from '~/screens/TestScreen';
+import TestScreen from '~/screens/testScreen';
 
 describe('TestScreen tests', () => {
   it('should show input name with placeholder "Name" correctly', () => {
