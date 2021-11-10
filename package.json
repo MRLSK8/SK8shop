@@ -8,7 +8,8 @@
     "start": "react-native start --reset-cache",
     "android:clean": "cd android && ./gradlew clean && cd ../",
     "android:build": "yarn android:clean && cd android && ./gradlew assembleRelease",
-    "test": "jest",
+    "test": "jest --watchAll",
+    "test:coverage": "jest --coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
