@@ -56,7 +56,11 @@ Objective:
 :white_check_mark: Date-fns\
 :white_check_mark: react-native-fast-image\
 :white_check_mark: redux-saga\
-:white_check_mark: Typescript
+:white_check_mark: Typescript\
+:white_check_mark: Jest\
+:white_check_mark: @testing-library/jest-native\
+:white_check_mark: @testing-library/react-hooks\
+:white_check_mark: @testing-library/react-native
 
 ## Prerequisites
 
@@ -99,6 +103,15 @@ $ yarn android:build
 #### It will generate an APK on android/app/build/outputs/apk/release/app-release.apk, send it to your cellphone and install it.
 #### And that's it! you're ready to use.
 
+## Running Tests
+#### You just need to run this command:
+```bash
+  $ yarn test
+```
+#### In order to check the tests coverage run this command:
+```bash
+  $ yarn test:coverage
+```
 
 ## File structure
 
