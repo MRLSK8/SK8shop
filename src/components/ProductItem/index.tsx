@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { TouchableOpacityProps } from 'react-native';
+
 import { numberToCurrency } from '~/helpers/numberToCurrency';
 import { ProductProps } from '~/store/ducks/cart.reducer';
 
@@ -11,9 +13,10 @@ import {
   Image,
   Title,
 } from './styles';
+
 import { styles } from '~/styles';
 
-interface ProductItemProps {
+interface ProductItemProps extends TouchableOpacityProps {
   callback(productData: ProductProps): void;
   productData: ProductProps;
 }
