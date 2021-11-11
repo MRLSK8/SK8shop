@@ -10,7 +10,8 @@
     "android:build": "yarn android:clean && cd android && ./gradlew assembleRelease",
     "test": "jest --watchAll",
     "test:coverage": "jest --coverage",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "build:detox": "detox build -c android.emu.debug"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.9",
@@ -57,6 +58,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
     "babel-plugin-root-import": "^6.6.0",
+    "detox": "^19.0.0",
     "eslint": "^7.14.0",
     "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
     "git-commit-msg-linter": "^3.2.8",

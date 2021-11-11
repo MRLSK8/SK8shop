@@ -136,6 +136,10 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        
+        // it was added in order to use "detox"
+        testBuildType System.getProperty('testBuildType', 'debug')  // This will later be used to control the test apk build type   
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     splits {
         abi {
@@ -216,6 +220,11 @@ dependencies {
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
     }
+
+    // it was added in order to use "detox"
+
+    // MAYBE IT NEEDS MORE THINGS CLASS "Test E2E" -> Configuração do Teste E2E -> 11:15
+    androidTestImplementation('com.wix:detox:+')
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
