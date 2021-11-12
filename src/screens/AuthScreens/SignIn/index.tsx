@@ -24,6 +24,7 @@ const signIn = () => {
   return (
     <Container>
       <SignInButton
+        testID={'login-btn'}
         onPress={handleLogin}
       >
         <SignInButtonLabel>

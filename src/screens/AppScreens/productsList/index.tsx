@@ -239,7 +239,7 @@ const productsList = () => {
 
   return (
     <SafeAreaViewWrapper>
-      <Container>
+      <Container testID={"product-list-wrapper"}>
         <OrderLabel>Ordenar por:</OrderLabel>
 
         <OrderOptions>
@@ -253,7 +253,10 @@ const productsList = () => {
             </OrderOptionRadioButton>
             <OrderOptionLabel>Ordem alfabética</OrderOptionLabel>
           </OrderOption>
-          <OrderOption onPress={() => setOrderOption('price')}>
+          <OrderOption
+            testID={"filter-by-price-btn"}
+            onPress={() => setOrderOption('price')}
+          >
             <OrderOptionRadioButton>
               {
                 orderOption === 'price' && (
