@@ -22,7 +22,7 @@ import {
   Image,
 } from './styles';
 
-const productDetails = () => {
+const ProductDetails = () => {
   const productData = useRoute<any>()?.params?.productData as ProductProps;
   const isAlreadyInTheCart = useAppSelector(state =>
     state.cart.products.some(product => product.id === productData.id)
@@ -95,4 +95,4 @@ const productDetails = () => {
   );
 };
 
-export default productDetails;
+export default ProductDetails;

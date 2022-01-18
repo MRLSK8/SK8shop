@@ -2,9 +2,9 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import productDetails from '~/screens/AppScreens/productDetails';
-import productsList from '~/screens/AppScreens/productsList';
-import shoppingCart from '~/screens/AppScreens/shoppingCart';
+import productDetails from '~/screens/AppScreens/ProductDetails';
+import productsList from '~/screens/AppScreens/ProductsList';
+import shoppingCart from '~/screens/AppScreens/ShoppingCart';
 
 const { Screen, Navigator } = createNativeStackNavigator();
 

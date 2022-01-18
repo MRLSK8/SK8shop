@@ -18,7 +18,7 @@ import {
   Container,
 } from './styles';
 
-const productsList = () => {
+const ProductsList = () => {
   const [orderOption, setOrderOption] = useState<'alphabet' | 'price'>('alphabet');
   const [products, setProducts] = useState<ProductProps[]>([]);
   const { navigate } = useNavigation();
@@ -278,4 +278,4 @@ const productsList = () => {
   );
 };
 
-export default productsList;
+export default ProductsList;
