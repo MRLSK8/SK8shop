@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "134924945513",
+    "project_id": "sk8shop-969a4",
+    "storage_bucket": "sk8shop-969a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134924945513:android:52fc9244bbef0647c07af8",
+        "android_client_info": {
+          "package_name": "com.sk8shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134924945513-egpf4ln2tglbfe88531nbkebs8ga7gmf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sk8shop",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "134924945513-pq01lds3jtsaunu6of61p22uf14grsrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6dnriSFtx8znwfhJLAjzBnH4HwEfi8ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134924945513-pq01lds3jtsaunu6of61p22uf14grsrf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
