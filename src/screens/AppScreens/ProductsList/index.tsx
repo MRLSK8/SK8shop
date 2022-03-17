@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
+import firestore from '@react-native-firebase/firestore';
 import { useNavigation } from '@react-navigation/native';
 import lodash from 'lodash';
 
@@ -18,8 +19,10 @@ import {
   Container,
 } from './styles';
 
+type orderByOptions = 'name' | 'price';
+
 const ProductsList = () => {
-  const [orderOption, setOrderOption] = useState<'alphabet' | 'price'>('alphabet');
+  const [orderOption, setOrderOption] = useState<orderByOptions>('name');
   const [products, setProducts] = useState<ProductProps[]>([]);
   const { navigate } = useNavigation();
 
@@ -27,6 +30,10 @@ const ProductsList = () => {
     // @ts-ignore
     navigate('ProductsDetails', { productData });
   }, []);
+
+  const handleOrderProducts = useCallback((_products?: ProductProps[]) => {
+    return lodash.orderBy(_products ?? products, [orderOption], ['asc']);
+  }, [products, orderOption]);
 
   const renderItem = ({ item }: any) => (
     <ProductItem
@@ -36,205 +43,28 @@ const ProductsList = () => {
   );
 
   useEffect(() => {
-    setProducts([
-      {
-        id: '1636f112f516',
-        name: 'Truck',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.\n\nOs novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável.',
-        image: 'https://images.unsplash.com/photo-1547447134-cd3f5c716030?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80',
-        price: 259.9,
-        previousPrice: 279.99,
-        countryOfOrigin: 'Brasil',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '3 meses'
-      },
-      {
-        id: '15ff1916',
-        name: 'Roda Black Sheep',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance. Os novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável.',
-        image: 'https://images.unsplash.com/photo-1478427433968-28045906c1dd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2thdGV8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 79.99,
-        previousPrice: 209.99,
-        countryOfOrigin: 'China',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '2 meses'
-      },
-      {
-        id: '161g561516',
-        name: 'Rolamento Red Bones',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1517774247280-f0d65bda942d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHNrYXRlYm9hcmRpbmd8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-        price: 55,
-        previousPrice: 80.50,
-        countryOfOrigin: 'China',
-        TypeOfShipping: 'Marketplace',
-        color: 'Vermelho',
-        SupplierWarranty: '6 meses'
-      },
-      {
-        id: '11e66f566s',
-        name: 'Lixa Jessup',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.\n\nOs novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável.',
-        image: 'https://images.unsplash.com/photo-1585027946577-16a57e32daae?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNrYXRlYm9hcmRpbmd8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 18.29,
-        previousPrice: 25.50,
-        countryOfOrigin: 'China',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '4 meses'
-      },
-      {
-        id: '11w651fe6',
-        name: 'Skate semi-profissional',
-        description: 'Os novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável.\n\nOs skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1605674136763-99ac629b8211?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDh8fHNrYXRlYm9hcmRpbmd8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 451.78,
-        previousPrice: 525.68,
-        countryOfOrigin: 'China',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '1 mês'
-      },
-      {
-        id: 'g65uk65516',
-        name: 'Cruiser',
-        description: 'Os novo Stage 11 standard são incontestavelmente a melhor combinação de características e medidas que a Independent já construiu.Ao melhorar as já modernas características do Stage 10 com uma remodelagem das medidas a Indy criou o novo padrão que todo truck deve ter.Melhorias nas curvas, estabilidade, menor possibilidade de wheels bite, melhor performance para manobras de borda, menor possibilidade de travar nas bordas (hang-up) e maior durabilidade são só algumas das características presentes no Stage 11.A Independent usa somente os melhores materiais: Alumínio 356 T6 nas traves e na base, aço cromado 4140 no prisioneiro e parafuso central Grade 8 são os componentes utilizados, de forma cuidadosa, para deixar o eixo com mais resposta, leve e super durável. Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1608610479260-135933538b00?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzIxfHxza2F0ZWJvYXJkaW5nfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 169.9,
-        previousPrice: 328.68,
-        countryOfOrigin: 'Estados Unidos',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '3 meses'
-      },
-      {
-        id: 'jy5165ul',
-        name: 'Skate Profissional completo',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.\n\nO ideal é que você faça um revezamento, trocando sempre a posição das rodas para que elas sejam desgastadas igualmente.',
-        image: 'https://media.istockphoto.com/photos/skateboarding-jumping-at-sunrise-picture-id465492606?b=1&k=20&m=465492606&s=170667a&w=0&h=CXlGdocIn9EJnhLTKYFHTKcUGE4Lf5UVtbHgBDBS_RE=',
-        price: 349.49,
-        previousPrice: 689.28,
-        countryOfOrigin: 'Argentina',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '2 meses'
-      },
-      {
-        id: '1g516jyt6',
-        name: 'Parafuso de base',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1596742797871-b12e5e6b4b1d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzAwfHxza2F0ZWJvYXJkaW5nfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 155,
-        previousPrice: 160.20,
-        countryOfOrigin: 'Uruguai',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '6 meses'
-      },
-      {
-        id: '1we55w66j15lu',
-        name: 'Longboard',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1531948371443-d5afa127f918?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fHNrYXRlfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-        price: 178.29,
-        previousPrice: 280.49,
-        countryOfOrigin: 'Chile',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '2 meses'
-      },
-      {
-        id: 'jy515ku651fe6',
-        name: 'Shape element',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1460566918553-e06622bc6733?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjI3fHxza2F0ZWJvYXJkaW5nfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 411.02,
-        previousPrice: 495.99,
-        countryOfOrigin: 'Chile',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '5 meses'
-      },
-      {
-        id: '9ee166jgr8933',
-        name: 'Skate Profissional completo',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1483378255583-fd248d0e6a98?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjk2fHxza2F0ZWJvYXJkaW5nfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 147.81,
-        previousPrice: 160.20,
-        countryOfOrigin: 'Chile',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '1 mês'
-      },
-      {
-        id: 'g51kugr526',
-        name: 'Skate completo',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1617392079938-d332e5d640e8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fHNrYXRlYm9hcmRpbmd8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 451.78,
-        previousPrice: 495.20,
-        countryOfOrigin: 'Brasil',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '3 meses'
-      },
-      {
-        id: '02gr616h5htth306',
-        name: 'PADS BLACK SHEEP',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1495708405154-b0200c251b80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODN8fHNrYXRlYm9hcmRpbmd8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 451.78,
-        previousPrice: 495.20,
-        countryOfOrigin: 'Italia',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '4 meses'
-      },
-      {
-        id: '02nv5tthfg651jykowbh',
-        name: 'Shape Flip',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1565991144913-add2713ae8a2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTEyfHxza2F0ZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 661.72,
-        previousPrice: 895.20,
-        countryOfOrigin: 'Italia',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '6 meses'
-      },
-      {
-        id: '02fds156g65gew615bh',
-        name: 'Truck Crail',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNrYXRlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 661.72,
-        previousPrice: 895.20,
-        countryOfOrigin: 'Italia',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '6 meses'
-      },
-      {
-        id: '1000d165165ewfg66bh',
-        name: 'Roda Spitifire',
-        description: 'Os skates profissionais Iron Shape são desenvolvidos com a mais alta tecnologia aeronáutica, o que resulta em um skate leve, resistente e de alta performance.',
-        image: 'https://images.unsplash.com/photo-1556019443-39c1f49212f0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fHNrYXRlfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        price: 539.99,
-        previousPrice: 585.48,
-        countryOfOrigin: 'Italia',
-        TypeOfShipping: 'Marketplace',
-        color: 'Azul',
-        SupplierWarranty: '6 meses'
-      }
-    ]);
+    const subscriber = firestore()
+      .collection('products')
+      .onSnapshot(querySnapshots => {
+        let _products: ProductProps[] = [];
+
+        querySnapshots.forEach(querySnapshot => {
+          const _product = querySnapshot.data() as ProductProps;
+
+          _products.push(_product);
+        });
+
+        _products = handleOrderProducts(_products);
+
+        setProducts(_products);
+      });
+
+    return () => subscriber();
   }, []);
 
   useEffect(() => {
-    const order = orderOption === 'alphabet' ? 'name' : 'price';
-    setProducts(prevState => lodash.orderBy(prevState, [order], ['asc']));
+    const _products = handleOrderProducts();
+    setProducts(_products);
   }, [orderOption]);
 
   return (
@@ -243,10 +73,10 @@ const ProductsList = () => {
         <OrderLabel>Ordenar por:</OrderLabel>
 
         <OrderOptions>
-          <OrderOption onPress={() => setOrderOption('alphabet')}>
+          <OrderOption onPress={() => setOrderOption('name')}>
             <OrderOptionRadioButton>
               {
-                orderOption === 'alphabet' && (
+                orderOption === 'name' && (
                   <OrderOptionRadioButtonSelected />
                 )
               }
