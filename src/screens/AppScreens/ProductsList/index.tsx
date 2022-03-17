@@ -6,6 +6,7 @@ import lodash from 'lodash';
 
 import { ProductProps } from '~/store/ducks/cart.reducer';
 import ProductItem from '~/components/ProductItem';
+import { showErrorAlert } from '~/helpers/alerts';
 import Loading from '~/components/Loading';
 
 import { SafeAreaViewWrapper } from '~/styles';
@@ -61,6 +62,8 @@ const ProductsList = () => {
 
         setProducts(_products);
         setIsLoading(false);
+      }, (error) => {
+        showErrorAlert('Oops!', "Ocorreu um erro ao carregar os produtos.");
       });
 
     return () => subscriber();
