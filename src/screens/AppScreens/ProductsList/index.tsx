@@ -55,14 +55,17 @@ const ProductsList = () => {
         querySnapshots.forEach(querySnapshot => {
           const _product = querySnapshot.data() as ProductProps;
 
-          _products.push(_product);
+          _products.push({
+            ..._product,
+            id: querySnapshot.id,
+          });
         });
 
         _products = handleOrderProducts(_products);
 
         setProducts(_products);
         setIsLoading(false);
-      }, (error) => {
+      }, () => {
         showErrorAlert('Oops!', "Ocorreu um erro ao carregar os produtos.");
       });
 
