@@ -6,6 +6,8 @@ import lodash from 'lodash';
 
 import { ProductProps } from '~/store/ducks/cart.reducer';
 import ProductItem from '~/components/ProductItem';
+import Loading from '~/components/Loading';
+
 import { SafeAreaViewWrapper } from '~/styles';
 
 import {
@@ -24,6 +26,7 @@ type orderByOptions = 'name' | 'price';
 const ProductsList = () => {
   const [orderOption, setOrderOption] = useState<orderByOptions>('name');
   const [products, setProducts] = useState<ProductProps[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { navigate } = useNavigation();
 
   const handleItemClicked = useCallback((productData: ProductProps) => {
@@ -57,6 +60,7 @@ const ProductsList = () => {
         _products = handleOrderProducts(_products);
 
         setProducts(_products);
+        setIsLoading(false);
       });
 
     return () => subscriber();
@@ -66,6 +70,10 @@ const ProductsList = () => {
     const _products = handleOrderProducts();
     setProducts(_products);
   }, [orderOption]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <SafeAreaViewWrapper>
