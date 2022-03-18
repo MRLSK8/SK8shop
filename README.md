@@ -38,6 +38,7 @@ Objective:
 
 :white_check_mark: React Native\
 :white_check_mark: Styled-components\
+:white_check_mark: Firebase (Firestore, Authentication)\
 :white_check_mark: Axios\
 :white_check_mark: React-navigation\
 :white_check_mark: Redux\
