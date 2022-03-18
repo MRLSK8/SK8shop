@@ -32,7 +32,7 @@ const ProductsList = () => {
 
   const handleItemClicked = useCallback((productData: ProductProps) => {
     // @ts-ignore
-    navigate('ProductsDetails', { productData });
+    navigate('ProductsDetails', { productId: productData.id });
   }, []);
 
   const handleOrderProducts = useCallback((_products?: ProductProps[]) => {
@@ -45,6 +45,10 @@ const ProductsList = () => {
       productData={item}
     />
   );
+
+  const handleGetProductsError = () => {
+    showErrorAlert('Oops!', "Ocorreu um erro ao carregar os produtos.");
+  }
 
   useEffect(() => {
     const subscriber = firestore()
@@ -65,9 +69,7 @@ const ProductsList = () => {
 
         setProducts(_products);
         setIsLoading(false);
-      }, () => {
-        showErrorAlert('Oops!', "Ocorreu um erro ao carregar os produtos.");
-      });
+      }, handleGetProductsError);
 
     return () => subscriber();
   }, []);

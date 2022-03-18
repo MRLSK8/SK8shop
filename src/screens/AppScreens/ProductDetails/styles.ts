@@ -37,8 +37,8 @@ export const AddToCartButton = styled.TouchableOpacity.attrs({
   flex-direction: row;
   align-self: center;
   border-radius: 6px;
+  margin-top: 48px;
   padding: 0 14px;
-  margin-top: 64px;
   height: 48px;
   width: 80%;
 `;
@@ -72,6 +72,33 @@ export const ProductPrice = styled.Text`
   font-size: 32px;
 `;
 
-export const ImageButtonWrapper = styled(Pressable)`
+export const ImageButtonWrapper = styled(Pressable)``;
 
+export const DescriptionWrapper = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const GoBackToProductListButton = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7
+})`
+  background-color: ${(props) => props.theme.colors.tertiary};
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  align-self: center;
+  border-radius: 6px;
+  margin-top: 32px;
+  padding: 0 14px;
+  height: 48px;
+  width: 80%;
+`;
+
+export const GoBackToProductListButtonLabel = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
+  color: ${({ theme }) => theme.colors.white100};
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 8px;
 `;
