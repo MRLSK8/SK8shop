@@ -63,16 +63,18 @@ const ProductDetails = () => {
   useEffect(() => {
     if (productId) {
       firestore()
-      .collection('products')
-      .doc(productId)
-      .get()
-      .then(doc => {
-        setProductData(doc.data() as ProductProps);
-      }).catch(() => {
-        showErrorAlert("Oops!", "Ocorreu um erro ao carregar os dados do produto");
-      }).finally(() => {
-        setIsLoading(false);
-      });
+        .collection('products')
+        .doc(productId)
+        .get()
+        .then(doc => {
+          const _product = { ...doc.data(), id: doc.id } as ProductProps;
+
+          setProductData(_product);
+        }).catch(() => {
+          showErrorAlert("Oops!", "Ocorreu um erro ao carregar os dados do produto");
+        }).finally(() => {
+          setIsLoading(false);
+        });
     }
   }, [productId]);
 
