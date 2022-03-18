@@ -54,20 +54,14 @@ const ProductsList = () => {
     const subscriber = firestore()
       .collection('products')
       .onSnapshot(querySnapshots => {
-        let _products: ProductProps[] = [];
+        const _products = querySnapshots.docs.map(querySnapshot => ({
+          ...querySnapshot.data() as ProductProps,
+          id: querySnapshot.id,
+        }));
 
-        querySnapshots.forEach(querySnapshot => {
-          const _product = querySnapshot.data() as ProductProps;
+        const _productsOrdered = handleOrderProducts(_products);
 
-          _products.push({
-            ..._product,
-            id: querySnapshot.id,
-          });
-        });
-
-        _products = handleOrderProducts(_products);
-
-        setProducts(_products);
+        setProducts(_productsOrdered);
         setIsLoading(false);
       }, handleGetProductsError);
 
