@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
+import lodash from 'lodash';
 
 import ImagePreview from '~/components/ImagePreview';
 import { useAppSelector } from '~/hooks/reduxHooks';
@@ -22,6 +24,19 @@ declare global {
 
 export default function Routes() {
   const isAuthenticated = useAppSelector(state => state.auth.isAuthenticated);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = auth().onAuthStateChanged(async user => {
+      if (!lodash.isEmpty(user)) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+
+    return unsubscribe;
+  }, []);
 
   return (
     <NavigationContainer>
@@ -29,7 +44,7 @@ export default function Routes() {
         screenOptions={{
           headerShown: false
         }}
-        initialRouteName={isAuthenticated ? "AppStack" : "AuthStack"}
+        initialRouteName={(isAuthenticated && isLoggedIn) ? "AppStack" : "AuthStack"}
       >
         <Screen name="AppStack" component={AppStack} />
         <Screen name="AuthStack" component={AuthStack} />
