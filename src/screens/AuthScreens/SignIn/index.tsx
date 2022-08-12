@@ -15,7 +15,7 @@ import {
   Container,
 } from './styles';
 
-const signIn = () => {
+const SignIn = () => {
   const { reset, navigate } = useNavigation();
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useAppDispatch();
@@ -128,4 +128,4 @@ const signIn = () => {
   );
 };
 
-export default signIn;
+export default SignIn;

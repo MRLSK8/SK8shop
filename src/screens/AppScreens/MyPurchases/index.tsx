@@ -27,7 +27,7 @@ import {
 } from './styles';
 
 
-const myPurchases = () => {
+const MyPurchases = () => {
   const products = useAppSelector(state => state.purchases.products);
   const { navigate } = useNavigation();
   const dispatch = useAppDispatch();
@@ -95,4 +95,4 @@ const myPurchases = () => {
   );
 };
 
-export default myPurchases;
+export default MyPurchases;

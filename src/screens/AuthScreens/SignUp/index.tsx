@@ -11,7 +11,7 @@ import {
   Container,
 } from './styles';
 
-const signUp = () => {
+const SignUp = () => {
   const handleSignUp = async () => {
     try {
       await auth().createUserWithEmailAndPassword("jmdl.k8@gmail.com", "123456");
@@ -39,4 +39,4 @@ const signUp = () => {
   );
 };
 
-export default signUp;
+export default SignUp;
