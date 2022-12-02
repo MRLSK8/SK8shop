@@ -32,6 +32,7 @@
     "moti": "^0.18.0",
     "react": "^18.2.0",
     "react-native": "0.69.4",
+    "react-native-code-push": "^7.0.5",
     "react-native-fast-image": "^8.5.11",
     "react-native-gesture-handler": "^2.5.0",
     "react-native-image-pan-zoom": "^2.1.12",

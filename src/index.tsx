@@ -5,8 +5,21 @@ import { ThemeProvider } from 'styled-components/native';
 import { Provider } from 'react-redux';
 import { store, persistor } from '~/store';
 import Routes from '~/routes';
+import codePush from "react-native-code-push";
 
 import theme from '~/styles/globalStyles';
+
+const codePushOptions = {
+  updateDialog: {
+    updateTitle: "You have an update",
+    optionalUpdateMessage: "Update available. Install?",
+    optionalIgnoreButtonLabel: "Nop",
+    optionalInstallButtonLabel: "Yep",
+  },
+  checkFrequency: codePush.CheckFrequency.ON_APP_START,
+  installMode: codePush.InstallMode.IMMEDIATE,
+  mandatoryInstallMode: codePush.InstallMode.IMMEDIATE,
+};
 
 const App = () => {
   return (
@@ -20,4 +33,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default codePush(codePushOptions)(App);

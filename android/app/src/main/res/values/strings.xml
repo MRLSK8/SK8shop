@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sk8shop</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">_LwXfj5ThTN9AOlBoyRS-0tPlegasoI6X94sd</string>
 </resources>
