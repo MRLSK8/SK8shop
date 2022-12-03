@@ -187,7 +187,6 @@ if "$cygwin" || "$msys" ; then
         # iterations, nor the values presented in `arg`.
         shift                   # remove old arg
         set -- "$@" "$arg"      # push replacement arg
-        fi
     done
 fi
 
