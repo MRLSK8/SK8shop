@@ -8,32 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* sk8shopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* sk8shopTests.m */; };
-		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		075ABEA0293BBC4000C27695 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 075ABE9F293BBC4000C27695 /* AppDelegate.mm */; };
+		075ABEA2293BCB5D00C27695 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEA1293BCB5D00C27695 /* GoogleService-Info.plist */; };
+		075ABEA3293BCB5D00C27695 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEA1293BCB5D00C27695 /* GoogleService-Info.plist */; };
+		075ABEBC293BCD6100C27695 /* UbuntuMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEB8293BCD6000C27695 /* UbuntuMono-Regular.ttf */; };
+		075ABEBD293BCD6100C27695 /* UbuntuMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEB8293BCD6000C27695 /* UbuntuMono-Regular.ttf */; };
+		075ABEBE293BCD6100C27695 /* UbuntuMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEB9293BCD6000C27695 /* UbuntuMono-BoldItalic.ttf */; };
+		075ABEBF293BCD6100C27695 /* UbuntuMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEB9293BCD6000C27695 /* UbuntuMono-BoldItalic.ttf */; };
+		075ABEC0293BCD6100C27695 /* UbuntuMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEBA293BCD6000C27695 /* UbuntuMono-Bold.ttf */; };
+		075ABEC1293BCD6100C27695 /* UbuntuMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEBA293BCD6000C27695 /* UbuntuMono-Bold.ttf */; };
+		075ABEC2293BCD6100C27695 /* UbuntuMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEBB293BCD6000C27695 /* UbuntuMono-Italic.ttf */; };
+		075ABEC3293BCD6100C27695 /* UbuntuMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEBB293BCD6000C27695 /* UbuntuMono-Italic.ttf */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		6172F2D35A4C3AA820D92908 /* libPods-sk8shop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-sk8shop.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-sk8shop-sk8shopTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-sk8shop-sk8shopTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		4B580B4EC82A4191B5A17FC0 /* UbuntuMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED181F2E1C51496C94B78015 /* UbuntuMono-Bold.ttf */; };
-		A049F7C79F134AA2AC811D2C /* UbuntuMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E45FE6012C9E410D94617296 /* UbuntuMono-BoldItalic.ttf */; };
-		2B84B4FDB65F4C058EE8289D /* UbuntuMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49E16B4E5CC8460887608D76 /* UbuntuMono-Italic.ttf */; };
-		974D04777CB04627953D94C4 /* UbuntuMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6618C8CFE254BB69D6F4FBA /* UbuntuMono-Regular.ttf */; };
-		9B2A45C930BF4E698755CF15 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EEAD0A053BD4CC39F6503B9 /* AntDesign.ttf */; };
-		462AF86B20234770B6E26164 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5185AC724BD4CEABE49FA76 /* Entypo.ttf */; };
-		D01FD3ABE054456696B081DC /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D8378490A834E8489BDC598 /* EvilIcons.ttf */; };
-		5542533F8F1A446C865C6D30 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 088A335F21204EEB9524B02B /* Feather.ttf */; };
-		0B48F2FC3FCE482DA0D59C59 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70033DFD3004CEDA16ABDD9 /* FontAwesome.ttf */; };
-		74F8A0ED817D40DCBEE8E6BE /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBAA649AB217426B8D95124A /* FontAwesome5_Brands.ttf */; };
-		1A8A736E8EA24B4FAF2616BB /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19EBA501AA914530910BF531 /* FontAwesome5_Regular.ttf */; };
-		83065B7060F94D7E920E6B81 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C850365D00249BE8E070973 /* FontAwesome5_Solid.ttf */; };
-		52C869B02B1F4D4EA9FA205D /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 839A42F636C847D9B5B1476E /* Fontisto.ttf */; };
-		101F0560E18249CDADEA8888 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7632386DA2254494BA225206 /* Foundation.ttf */; };
-		660831D9563F4BB3AC245452 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7311DA3052A4C19AB09C81E /* Ionicons.ttf */; };
-		48AA61AC6A1F4A358968B40F /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58B8E849A31049749B622647 /* MaterialCommunityIcons.ttf */; };
-		6251313F4E06489F9E7753E2 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51033DE304C740179FFD609F /* MaterialIcons.ttf */; };
-		74A64EB8403E4743A26A38AA /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B95DCC9FAC746CCB347793C /* Octicons.ttf */; };
-		C544A7955B6C4A1DAD977E2B /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02B2937E79DC464CACC3D81F /* SimpleLineIcons.ttf */; };
-		C45CD2ED548C41DABA4BB1C2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D69D98F66394BC691E150FC /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,40 +40,46 @@
 		00E356EE1AD99517003FC87E /* sk8shopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sk8shopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* sk8shopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sk8shopTests.m; sourceTree = "<group>"; };
+		02B2937E79DC464CACC3D81F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		075ABE9F293BBC4000C27695 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = sk8shop/AppDelegate.mm; sourceTree = "<group>"; };
+		075ABEA1293BCB5D00C27695 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		075ABEB8293BCD6000C27695 /* UbuntuMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UbuntuMono-Regular.ttf"; path = "../assets/fonts/UbuntuMono-Regular.ttf"; sourceTree = "<group>"; };
+		075ABEB9293BCD6000C27695 /* UbuntuMono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UbuntuMono-BoldItalic.ttf"; path = "../assets/fonts/UbuntuMono-BoldItalic.ttf"; sourceTree = "<group>"; };
+		075ABEBA293BCD6000C27695 /* UbuntuMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UbuntuMono-Bold.ttf"; path = "../assets/fonts/UbuntuMono-Bold.ttf"; sourceTree = "<group>"; };
+		075ABEBB293BCD6000C27695 /* UbuntuMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "UbuntuMono-Italic.ttf"; path = "../assets/fonts/UbuntuMono-Italic.ttf"; sourceTree = "<group>"; };
+		088A335F21204EEB9524B02B /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* sk8shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sk8shop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = sk8shop/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = sk8shop/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = sk8shop/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = sk8shop/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = sk8shop/main.m; sourceTree = "<group>"; };
+		19EBA501AA914530910BF531 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		1D0AE47A65C8663E3B452821 /* Pods-sk8shop-sk8shopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sk8shop-sk8shopTests.release.xcconfig"; path = "Target Support Files/Pods-sk8shop-sk8shopTests/Pods-sk8shop-sk8shopTests.release.xcconfig"; sourceTree = "<group>"; };
+		2D69D98F66394BC691E150FC /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		2EEAD0A053BD4CC39F6503B9 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		49E16B4E5CC8460887608D76 /* UbuntuMono-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UbuntuMono-Italic.ttf"; path = "../assets/fonts/UbuntuMono-Italic.ttf"; sourceTree = "<group>"; };
+		51033DE304C740179FFD609F /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		58B8E849A31049749B622647 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		6423831EA8574132BED9D8CC /* libPods-sk8shop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sk8shop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C850365D00249BE8E070973 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-sk8shop-sk8shopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sk8shop-sk8shopTests.debug.xcconfig"; path = "Target Support Files/Pods-sk8shop-sk8shopTests/Pods-sk8shop-sk8shopTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7632386DA2254494BA225206 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = sk8shop/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		839A42F636C847D9B5B1476E /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		9B95DCC9FAC746CCB347793C /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		9D8378490A834E8489BDC598 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		A5185AC724BD4CEABE49FA76 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		ABFE59519B596E51CEFDCCC0 /* libPods-sk8shop-sk8shopTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sk8shop-sk8shopTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A881CF5CF3F2B244570E2A /* Pods-sk8shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sk8shop.debug.xcconfig"; path = "Target Support Files/Pods-sk8shop/Pods-sk8shop.debug.xcconfig"; sourceTree = "<group>"; };
+		C70033DFD3004CEDA16ABDD9 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-sk8shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sk8shop.release.xcconfig"; path = "Target Support Files/Pods-sk8shop/Pods-sk8shop.release.xcconfig"; sourceTree = "<group>"; };
+		D7311DA3052A4C19AB09C81E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		E45FE6012C9E410D94617296 /* UbuntuMono-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UbuntuMono-BoldItalic.ttf"; path = "../assets/fonts/UbuntuMono-BoldItalic.ttf"; sourceTree = "<group>"; };
+		EBAA649AB217426B8D95124A /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		ED181F2E1C51496C94B78015 /* UbuntuMono-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UbuntuMono-Bold.ttf"; path = "../assets/fonts/UbuntuMono-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		ED181F2E1C51496C94B78015 /* UbuntuMono-Bold.ttf */ = {isa = PBXFileReference; name = "UbuntuMono-Bold.ttf"; path = "../assets/fonts/UbuntuMono-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E45FE6012C9E410D94617296 /* UbuntuMono-BoldItalic.ttf */ = {isa = PBXFileReference; name = "UbuntuMono-BoldItalic.ttf"; path = "../assets/fonts/UbuntuMono-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		49E16B4E5CC8460887608D76 /* UbuntuMono-Italic.ttf */ = {isa = PBXFileReference; name = "UbuntuMono-Italic.ttf"; path = "../assets/fonts/UbuntuMono-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F6618C8CFE254BB69D6F4FBA /* UbuntuMono-Regular.ttf */ = {isa = PBXFileReference; name = "UbuntuMono-Regular.ttf"; path = "../assets/fonts/UbuntuMono-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2EEAD0A053BD4CC39F6503B9 /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A5185AC724BD4CEABE49FA76 /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9D8378490A834E8489BDC598 /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		088A335F21204EEB9524B02B /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C70033DFD3004CEDA16ABDD9 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EBAA649AB217426B8D95124A /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		19EBA501AA914530910BF531 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6C850365D00249BE8E070973 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		839A42F636C847D9B5B1476E /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7632386DA2254494BA225206 /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D7311DA3052A4C19AB09C81E /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		58B8E849A31049749B622647 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		51033DE304C740179FFD609F /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9B95DCC9FAC746CCB347793C /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		02B2937E79DC464CACC3D81F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2D69D98F66394BC691E150FC /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F6618C8CFE254BB69D6F4FBA /* UbuntuMono-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UbuntuMono-Regular.ttf"; path = "../assets/fonts/UbuntuMono-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +128,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				075ABEA1293BCB5D00C27695 /* GoogleService-Info.plist */,
 			);
 			name = sk8shop;
 			sourceTree = "<group>";
@@ -146,6 +143,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5579E345A433412ABB094CD9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED181F2E1C51496C94B78015 /* UbuntuMono-Bold.ttf */,
+				E45FE6012C9E410D94617296 /* UbuntuMono-BoldItalic.ttf */,
+				49E16B4E5CC8460887608D76 /* UbuntuMono-Italic.ttf */,
+				F6618C8CFE254BB69D6F4FBA /* UbuntuMono-Regular.ttf */,
+				2EEAD0A053BD4CC39F6503B9 /* AntDesign.ttf */,
+				A5185AC724BD4CEABE49FA76 /* Entypo.ttf */,
+				9D8378490A834E8489BDC598 /* EvilIcons.ttf */,
+				088A335F21204EEB9524B02B /* Feather.ttf */,
+				C70033DFD3004CEDA16ABDD9 /* FontAwesome.ttf */,
+				EBAA649AB217426B8D95124A /* FontAwesome5_Brands.ttf */,
+				19EBA501AA914530910BF531 /* FontAwesome5_Regular.ttf */,
+				6C850365D00249BE8E070973 /* FontAwesome5_Solid.ttf */,
+				839A42F636C847D9B5B1476E /* Fontisto.ttf */,
+				7632386DA2254494BA225206 /* Foundation.ttf */,
+				D7311DA3052A4C19AB09C81E /* Ionicons.ttf */,
+				58B8E849A31049749B622647 /* MaterialCommunityIcons.ttf */,
+				51033DE304C740179FFD609F /* MaterialIcons.ttf */,
+				9B95DCC9FAC746CCB347793C /* Octicons.ttf */,
+				02B2937E79DC464CACC3D81F /* SimpleLineIcons.ttf */,
+				2D69D98F66394BC691E150FC /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +180,11 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				075ABEBA293BCD6000C27695 /* UbuntuMono-Bold.ttf */,
+				075ABEB9293BCD6000C27695 /* UbuntuMono-BoldItalic.ttf */,
+				075ABEBB293BCD6000C27695 /* UbuntuMono-Italic.ttf */,
+				075ABEB8293BCD6000C27695 /* UbuntuMono-Regular.ttf */,
+				075ABE9F293BBC4000C27695 /* AppDelegate.mm */,
 				13B07FAE1A68108700A75B9A /* sk8shop */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* sk8shopTests */,
@@ -186,37 +215,8 @@
 				6C97AB639B58BBB4B15BBE30 /* Pods-sk8shop-sk8shopTests.debug.xcconfig */,
 				1D0AE47A65C8663E3B452821 /* Pods-sk8shop-sk8shopTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		5579E345A433412ABB094CD9 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				ED181F2E1C51496C94B78015 /* UbuntuMono-Bold.ttf */,
-				E45FE6012C9E410D94617296 /* UbuntuMono-BoldItalic.ttf */,
-				49E16B4E5CC8460887608D76 /* UbuntuMono-Italic.ttf */,
-				F6618C8CFE254BB69D6F4FBA /* UbuntuMono-Regular.ttf */,
-				2EEAD0A053BD4CC39F6503B9 /* AntDesign.ttf */,
-				A5185AC724BD4CEABE49FA76 /* Entypo.ttf */,
-				9D8378490A834E8489BDC598 /* EvilIcons.ttf */,
-				088A335F21204EEB9524B02B /* Feather.ttf */,
-				C70033DFD3004CEDA16ABDD9 /* FontAwesome.ttf */,
-				EBAA649AB217426B8D95124A /* FontAwesome5_Brands.ttf */,
-				19EBA501AA914530910BF531 /* FontAwesome5_Regular.ttf */,
-				6C850365D00249BE8E070973 /* FontAwesome5_Solid.ttf */,
-				839A42F636C847D9B5B1476E /* Fontisto.ttf */,
-				7632386DA2254494BA225206 /* Foundation.ttf */,
-				D7311DA3052A4C19AB09C81E /* Ionicons.ttf */,
-				58B8E849A31049749B622647 /* MaterialCommunityIcons.ttf */,
-				51033DE304C740179FFD609F /* MaterialIcons.ttf */,
-				9B95DCC9FAC746CCB347793C /* Octicons.ttf */,
-				02B2937E79DC464CACC3D81F /* SimpleLineIcons.ttf */,
-				2D69D98F66394BC691E150FC /* Zocial.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -254,6 +254,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				C8AC78B0264D0F9F6F6D630E /* [CP] Embed Pods Frameworks */,
 				ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */,
+				58859D43E525CCBECC509443 /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
@@ -305,6 +306,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075ABEA3293BCB5D00C27695 /* GoogleService-Info.plist in Resources */,
+				075ABEC1293BCD6100C27695 /* UbuntuMono-Bold.ttf in Resources */,
+				075ABEC3293BCD6100C27695 /* UbuntuMono-Italic.ttf in Resources */,
+				075ABEBF293BCD6100C27695 /* UbuntuMono-BoldItalic.ttf in Resources */,
+				075ABEBD293BCD6100C27695 /* UbuntuMono-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,27 +319,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				075ABEBC293BCD6100C27695 /* UbuntuMono-Regular.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				4B580B4EC82A4191B5A17FC0 /* UbuntuMono-Bold.ttf in Resources */,
-				A049F7C79F134AA2AC811D2C /* UbuntuMono-BoldItalic.ttf in Resources */,
-				2B84B4FDB65F4C058EE8289D /* UbuntuMono-Italic.ttf in Resources */,
-				974D04777CB04627953D94C4 /* UbuntuMono-Regular.ttf in Resources */,
-				9B2A45C930BF4E698755CF15 /* AntDesign.ttf in Resources */,
-				462AF86B20234770B6E26164 /* Entypo.ttf in Resources */,
-				D01FD3ABE054456696B081DC /* EvilIcons.ttf in Resources */,
-				5542533F8F1A446C865C6D30 /* Feather.ttf in Resources */,
-				0B48F2FC3FCE482DA0D59C59 /* FontAwesome.ttf in Resources */,
-				74F8A0ED817D40DCBEE8E6BE /* FontAwesome5_Brands.ttf in Resources */,
-				1A8A736E8EA24B4FAF2616BB /* FontAwesome5_Regular.ttf in Resources */,
-				83065B7060F94D7E920E6B81 /* FontAwesome5_Solid.ttf in Resources */,
-				52C869B02B1F4D4EA9FA205D /* Fontisto.ttf in Resources */,
-				101F0560E18249CDADEA8888 /* Foundation.ttf in Resources */,
-				660831D9563F4BB3AC245452 /* Ionicons.ttf in Resources */,
-				48AA61AC6A1F4A358968B40F /* MaterialCommunityIcons.ttf in Resources */,
-				6251313F4E06489F9E7753E2 /* MaterialIcons.ttf in Resources */,
-				74A64EB8403E4743A26A38AA /* Octicons.ttf in Resources */,
-				C544A7955B6C4A1DAD977E2B /* SimpleLineIcons.ttf in Resources */,
-				C45CD2ED548C41DABA4BB1C2 /* Zocial.ttf in Resources */,
+				075ABEC2293BCD6100C27695 /* UbuntuMono-Italic.ttf in Resources */,
+				075ABEA2293BCB5D00C27695 /* GoogleService-Info.plist in Resources */,
+				075ABEBE293BCD6100C27695 /* UbuntuMono-BoldItalic.ttf in Resources */,
+				075ABEC0293BCD6100C27695 /* UbuntuMono-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +400,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sk8shop-sk8shopTests/Pods-sk8shop-sk8shopTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		58859D43E525CCBECC509443 /* [CP-User] [RNFB] Core Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Core Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | /usr/bin/head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    if ! python3 --version >/dev/null 2>&1; then echo \"python3 not found, firebase.json file processing error.\" && exit 1; fi\n    _JSON_OUTPUT_BASE64=$(python3 -c 'import json,sys,base64;print(base64.b64encode(bytes(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"', '\"'rb'\"').read())['${_JSON_ROOT}']), '\"'utf-8'\"')).decode())' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.app_data_collection_default_enabled\n  _APP_DATA_COLLECTION_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_data_collection_default_enabled\")\n  if [[ $_APP_DATA_COLLECTION_ENABLED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseDataCollectionDefaultEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_DATA_COLLECTION_ENABLED\")\")\n  fi\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.analytics_collection_deactivated\n  _ANALYTICS_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_collection_deactivated\")\n  if [[ $_ANALYTICS_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_DEACTIVATED\")\")\n  fi\n\n  # config.analytics_idfv_collection_enabled\n  _ANALYTICS_IDFV_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_idfv_collection_enabled\")\n  if [[ $_ANALYTICS_IDFV_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_IDFV_COLLECTION\")\")\n  fi\n\n  # config.analytics_default_allow_ad_personalization_signals\n  _ANALYTICS_PERSONALIZATION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_personalization_signals\")\n  if [[ $_ANALYTICS_PERSONALIZATION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_PERSONALIZATION\")\")\n  fi\n\n  # config.analytics_registration_with_ad_network_enabled\n  _ANALYTICS_REGISTRATION_WITH_AD_NETWORK=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_registration_with_ad_network_enabled\")\n  if [[ $_ANALYTICS_REGISTRATION_WITH_AD_NETWORK ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_REGISTRATION_WITH_AD_NETWORK\")\")\n  fi\n\n  # config.google_analytics_automatic_screen_reporting_enabled\n  _ANALYTICS_AUTO_SCREEN_REPORTING=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_automatic_screen_reporting_enabled\")\n  if [[ $_ANALYTICS_AUTO_SCREEN_REPORTING ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAutomaticScreenReportingEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_SCREEN_REPORTING\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_collection_deactivated\n  _PERF_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_collection_deactivated\")\n  if [[ $_PERF_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_deactivated\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_DEACTIVATED\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.in_app_messaging_auto_colllection_enabled\n  _FIAM_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"in_app_messaging_auto_collection_enabled\")\n  if [[ $_FIAM_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseInAppMessagingAutomaticDataCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_FIAM_AUTO_INIT\")\")\n  fi\n\n  # config.app_check_token_auto_refresh\n  _APP_CHECK_TOKEN_AUTO_REFRESH=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_check_token_auto_refresh\")\n  if [[ $_APP_CHECK_TOKEN_AUTO_REFRESH ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAppCheckTokenAutoRefreshEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_CHECK_TOKEN_AUTO_REFRESH\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
 		};
 		A130D646172E58E1D159D8F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -500,8 +504,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				075ABEA0293BBC4000C27695 /* AppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,7 +589,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sk8shop;
 				PRODUCT_NAME = sk8shop;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -610,7 +614,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sk8shop;
 				PRODUCT_NAME = sk8shop;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -650,7 +654,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -674,11 +678,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/lib/swift\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -716,7 +720,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -733,10 +737,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/lib/swift\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
