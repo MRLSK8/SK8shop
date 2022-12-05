@@ -3,35 +3,37 @@
 import React, { useState } from 'react';
 
 import { Text, TextInput, Button } from 'react-native';
-import { Container } from './styles';
+import { Container, Input } from './styles';
 
 const TestScreen = () => {
-  const [lastName, setLastName] = useState('');
-  const [name, setName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [name, setName] = useState('');
 
-  const handleOnPress = (name: string) => {
-    console.log(name);
-  }
+	const handleOnPress = (name: string) => {
+		console.log(name);
+	}
 
-  return (
-    <Container>
-      <Text testID='screen-title'>Test Screen</Text>
+	return (
+		<Container>
+			<Text testID='screen-title'>Test Screen</Text>
 
-      <TextInput
-        placeholder="Name"
-        onChange={value => setName(value.toString())}
-      />
-      <TextInput
-        placeholder="Sobrenome"
-        onChange={value => setLastName(value.toString())}
-      />
+			<Input
+				placeholder="Name"
+				onChange={value => setName(value.toString())}
+			/>
 
-      <Button
-        title="Salvar"
-        onPress={() => handleOnPress(name + lastName)}
-      />
-    </Container>
-  );
+			<Input
+				placeholder="Sobrenome"
+				onChange={value => setLastName(value.toString())}
+			/>
+
+			<Button
+				title="Salvar"
+				color={"blue"}
+				onPress={() => handleOnPress(name + lastName)}
+			/>
+		</Container>
+	);
 };
 
 export default TestScreen;

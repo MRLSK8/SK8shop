@@ -22,7 +22,7 @@ module.exports = {
     "@testing-library/jest-native/extend-expect",
     "jest-styled-components"
   ],
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: [
     'src/**/*.tsx',
     '!src/**/*.spec.tsx'
