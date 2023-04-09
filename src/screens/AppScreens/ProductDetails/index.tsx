@@ -65,7 +65,8 @@ const ProductDetails = () => {
 
 		return {
 			opacity: withTiming(scale, { duration: 300, easing: Easing.ease }),
-			borderRadius: withSpring(borderRadius, { mass: 5, damping: 1, stiffness: 200,  }),
+			borderBottomLeftRadius: withSpring(borderRadius, { mass: 5, damping: 1, stiffness: 200, }),
+			borderBottomRightRadius: withSpring(borderRadius, { mass: 5, damping: 1, stiffness: 200, }),
 		};
 	});
 

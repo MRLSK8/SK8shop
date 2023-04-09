@@ -27,8 +27,8 @@ const ProductItem: React.FC<ProductItemProps> = ({ productData, callback }) => {
 		<Container
 			testID="product-item-btn"
 			onPress={() => callback(productData)}
-			entering={FadeIn}
-			exiting={FadeOut}
+			entering={FadeIn.duration(600)}
+			exiting={FadeOut.duration(600)}
 			style={styles.shadow}
 		>
 			<Image source={{ uri: productData.image }} />
