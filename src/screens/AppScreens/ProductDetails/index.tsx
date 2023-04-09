@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 import firestore from '@react-native-firebase/firestore';
+import {
+	useAnimatedScrollHandler,
+	useAnimatedStyle,
+	useSharedValue,
+	Extrapolation,
+	interpolate,
+	withTiming,
+	Easing,
+	withSpring
+} from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
 import lodash from 'lodash';
@@ -15,137 +25,163 @@ import Loading from '~/components/Loading';
 
 import { Container, SafeAreaViewWrapper } from '~/styles';
 import {
-  GoBackToProductListButtonLabel,
-  GoBackToProductListButton,
-  AddToCartButtonLabel,
-  PreviousProductPrice,
-  ImageButtonWrapper,
-  DescriptionWrapper,
-  ShoppingCartIcon,
-  AddToCartButton,
-  ProductPrice,
-  Description,
-  Title,
-  Image,
+	GoBackToProductListButtonLabel,
+	GoBackToProductListButton,
+	AddToCartButtonLabel,
+	PreviousProductPrice,
+	ImageButtonWrapper,
+	DescriptionWrapper,
+	ShoppingCartIcon,
+	AddToCartButton,
+	ProductPrice,
+	IMAGE_HEIGHT,
+	Description,
+	Title,
+	Image,
 } from './styles';
 
 const ProductDetails = () => {
-  const productId = useRoute<any>()?.params?.productId as string;
-  const [productData, setProductData] = useState<ProductProps>({} as ProductProps);
-  const [isLoading, setIsLoading] = useState(true);
-  const { navigate } = useNavigation();
-  const dispatch = useAppDispatch();
+	const productId = useRoute<any>()?.params?.productId as string;
+	const [productData, setProductData] = useState<ProductProps>({} as ProductProps);
+	const [isLoading, setIsLoading] = useState(true);
+	const { navigate } = useNavigation();
+	const dispatch = useAppDispatch();
+	const scrollY = useSharedValue(1);
 
-  const isAlreadyInTheCart = useAppSelector(state =>
-    state.cart.products.some(product => product.id === productId)
-  );
+	const isAlreadyInTheCart = useAppSelector(state =>
+		state.cart.products.some(product => product.id === productId)
+	);
 
-  const handleNavigateBackToPRoductList = () => {
-    // @ts-ignore
-    navigate('Products');
-  }
+	const animatedStyle = useAnimatedStyle(() => {
+		const scale = interpolate(scrollY.value,
+			[0, IMAGE_HEIGHT / 2, IMAGE_HEIGHT], [1, 0.5, 0],
+			{ extrapolateLeft: Extrapolation.CLAMP }
+		);
+		const borderRadius = interpolate(
+			scrollY.value,
+			[0, IMAGE_HEIGHT / 2, IMAGE_HEIGHT], [0, 24, 32],
+			{ extrapolateLeft: Extrapolation.CLAMP }
+		);
 
-  const handleAddProductToCart = (product: ProductProps) => {
-    dispatch(addProductToCart(product))
-  }
+		return {
+			opacity: withTiming(scale, { duration: 300, easing: Easing.ease }),
+			borderRadius: withSpring(borderRadius, { mass: 5, damping: 1, stiffness: 200,  }),
+		};
+	});
 
-  const handleNavigateToCart = () => {
-    // @ts-ignore
-    navigate('ShoppingCart');
-  }
+	const scrollHandler = useAnimatedScrollHandler((event) => {
+		scrollY.value = event.contentOffset.y;
+	});
 
-  const handleGoToImagePreview = (imageUri: string) => {
-    if (!imageUri) return;
-    // @ts-ignore
-    navigate('ImagePreview', { imageUri });
-  }
+	const handleNavigateBackToPRoductList = () => {
+		// @ts-ignore
+		navigate('Products');
+	}
 
-  useEffect(() => {
-    if (productId) {
-      firestore()
-        .collection('products')
-        .doc(productId)
-        .get()
-        .then(doc => {
-          const _product = { ...doc.data(), id: doc.id } as ProductProps;
+	const handleAddProductToCart = (product: ProductProps) => {
+		dispatch(addProductToCart(product))
+	}
 
-          setProductData(_product);
-        }).catch(() => {
-          showErrorAlert("Oops!", "Ocorreu um erro ao carregar os dados do produto");
-        }).finally(() => {
-          setIsLoading(false);
-        });
-    }
-  }, [productId]);
+	const handleNavigateToCart = () => {
+		// @ts-ignore
+		navigate('ShoppingCart');
+	}
 
-  if (lodash.isEmpty(productData) && !isLoading) {
-    return (
-      <DescriptionWrapper>
-        <Description>
-          Produto não encontrado!
-        </Description>
-        <GoBackToProductListButton
-          onPress={handleNavigateBackToPRoductList}
-        >
-          <GoBackToProductListButtonLabel>
-            lista de produtos
-          </GoBackToProductListButtonLabel>
-        </GoBackToProductListButton>
-      </DescriptionWrapper>
-    );
-  }
+	const handleGoToImagePreview = (imageUri: string) => {
+		if (!imageUri) return;
+		// @ts-ignore
+		navigate('ImagePreview', { imageUri });
+	}
 
-  if (isLoading) {
-    return <Loading />;
-  }
+	useEffect(() => {
+		if (productId) {
+			firestore()
+				.collection('products')
+				.doc(productId)
+				.get()
+				.then(doc => {
+					const _product = { ...doc.data(), id: doc.id } as ProductProps;
 
-  return (
-    <SafeAreaViewWrapper>
-      <ScreenHeader />
-      <Container>
-        <ImageButtonWrapper
-          onPress={() => handleGoToImagePreview(productData.image)}
-        >
-          <Image source={{ uri: productData.image }} />
-        </ImageButtonWrapper>
+					setProductData(_product);
+					setIsLoading(false);
+				}).catch(() => {
+					showErrorAlert("Oops!", "Ocorreu um erro ao carregar os dados do produto");
+					setIsLoading(false);
+				});
+		}
+	}, [productId]);
 
-        <Title>{productData.name}</Title>
+	if (lodash.isEmpty(productData) && !isLoading) {
+		return (
+			<DescriptionWrapper>
+				<Description>
+					Produto não encontrado!
+				</Description>
+				<GoBackToProductListButton
+					onPress={handleNavigateBackToPRoductList}
+				>
+					<GoBackToProductListButtonLabel>
+						lista de produtos
+					</GoBackToProductListButtonLabel>
+				</GoBackToProductListButton>
+			</DescriptionWrapper>
+		);
+	}
 
-        <Description>{productData.description}</Description>
+	if (isLoading) {
+		return <Loading />;
+	}
 
-        <Description>
-          Garantia do Fornecedor: {productData.SupplierWarranty}
-          {'\n'}
-          Cor: {productData.color}
-          {'\n'}
-          País de origem: {productData.countryOfOrigin}
-          {'\n'}
-          Tipo de frete: {productData.TypeOfShipping}
-        </Description>
+	return (
+		<SafeAreaViewWrapper>
+			<ScreenHeader />
+			<Container
+				onScroll={scrollHandler}
+				scrollEventThrottle={16}
+			>
+				<ImageButtonWrapper
+					onPress={() => handleGoToImagePreview(productData.image)}
+				>
+					<Image source={{ uri: productData.image }} style={animatedStyle} />
+				</ImageButtonWrapper>
 
-        <Description>
-          de <PreviousProductPrice>{numberToCurrency(productData.previousPrice)}</PreviousProductPrice>
-          {'\n'}
-          por <ProductPrice>{numberToCurrency(productData.price)}</ProductPrice>
-        </Description>
+				<Title>{productData.name}</Title>
 
-        <AddToCartButton
-          isAlreadyInTheCart={isAlreadyInTheCart}
-          onPress={() =>
-            isAlreadyInTheCart ? handleNavigateToCart() : handleAddProductToCart(productData)}
-        >
-          <AddToCartButtonLabel>
-            {isAlreadyInTheCart ? 'Ir para o carrinho' : 'Adicionar ao carrinho'}
-          </AddToCartButtonLabel>
-          {
-            isAlreadyInTheCart && (
-              <ShoppingCartIcon />
-            )
-          }
-        </AddToCartButton>
-      </Container>
-    </SafeAreaViewWrapper >
-  );
+				<Description>{productData.description}</Description>
+
+				<Description>
+					Garantia do Fornecedor: {productData.SupplierWarranty}
+					{'\n'}
+					Cor: {productData.color}
+					{'\n'}
+					País de origem: {productData.countryOfOrigin}
+					{'\n'}
+					Tipo de frete: {productData.TypeOfShipping}
+				</Description>
+
+				<Description>
+					de <PreviousProductPrice>{numberToCurrency(productData.previousPrice)}</PreviousProductPrice>
+					{'\n'}
+					por <ProductPrice>{numberToCurrency(productData.price)}</ProductPrice>
+				</Description>
+
+				<AddToCartButton
+					isAlreadyInTheCart={isAlreadyInTheCart}
+					onPress={() =>
+						isAlreadyInTheCart ? handleNavigateToCart() : handleAddProductToCart(productData)}
+				>
+					<AddToCartButtonLabel>
+						{isAlreadyInTheCart ? 'Ir para o carrinho' : 'Adicionar ao carrinho'}
+					</AddToCartButtonLabel>
+					{
+						isAlreadyInTheCart && (
+							<ShoppingCartIcon />
+						)
+					}
+				</AddToCartButton>
+			</Container>
+		</SafeAreaViewWrapper >
+	);
 };
 
 export default ProductDetails;
