@@ -1,13 +1,17 @@
 import styled, { css } from 'styled-components/native';
+import { TouchableOpacity } from 'react-native';
 import FastImage from 'react-native-fast-image';
+import Animated from 'react-native-reanimated';
+
+const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
 
 const borderTop = css`
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 `;
 
-export const Container = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.7
+export const Container = styled(AnimatedTouchableOpacity).attrs({
+	activeOpacity: 0.7
 })`
   background-color: ${({ theme }) => theme.colors.white};
   padding-bottom: 12px;
@@ -18,7 +22,7 @@ export const Container = styled.TouchableOpacity.attrs({
 `;
 
 export const Image = styled(FastImage).attrs({
-  resizeMode: 'cover'
+	resizeMode: 'cover'
 })`
   height: 100px;
   ${borderTop}
@@ -26,7 +30,7 @@ export const Image = styled(FastImage).attrs({
 `;
 
 export const Title = styled.Text.attrs({
-  numberOfLines: 1
+	numberOfLines: 1
 })`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
   color: ${({ theme }) => theme.colors.dark200};
