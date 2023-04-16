@@ -65,7 +65,7 @@
     "@types/react-native": "0.71.5",
     "@types/react-native-vector-icons": "^6.4.12",
     "@types/react-test-renderer": "^18.0.0",
-    "@types/styled-components": "^5.1.26",
+    "@types/styled-components": "5.1.6",
     "@types/styled-components-react-native": "^5.2.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^29.3.1",
