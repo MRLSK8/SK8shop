@@ -109,18 +109,18 @@ const ProductDetails = () => {
 
 	if (lodash.isEmpty(productData) && !isLoading) {
 		return (
-			<DescriptionWrapper>
-				<Description>
+			<S.DescriptionWrapper>
+				<S.Description>
 					Produto não encontrado!
-				</Description>
-				<GoBackToProductListButton
+				</S.Description>
+				<S.GoBackToProductListButton
 					onPress={handleNavigateBackToPRoductList}
 				>
-					<GoBackToProductListButtonLabel>
+					<S.GoBackToProductListButtonLabel>
 						lista de produtos
-					</GoBackToProductListButtonLabel>
-				</GoBackToProductListButton>
-			</DescriptionWrapper>
+					</S.GoBackToProductListButtonLabel>
+				</S.GoBackToProductListButton>
+			</S.DescriptionWrapper>
 		);
 	}
 
