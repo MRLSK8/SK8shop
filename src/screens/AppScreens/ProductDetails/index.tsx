@@ -2,17 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import firestore from '@react-native-firebase/firestore';
 
-import {
-	useAnimatedScrollHandler,
-	useAnimatedStyle,
-	useSharedValue,
-	Extrapolation,
-	interpolate,
-	withTiming,
-	Easing,
-	withSpring
-} from 'react-native-reanimated';
-
 import { RouteProp, useNavigation } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
 import lodash from 'lodash';
@@ -25,8 +14,7 @@ import { ScreenHeader, Loading } from '~/components';
 
 import { Container, SafeAreaViewWrapper } from '~/styles';
 
-import { IMAGE_HEIGHT } from './styles';
-
+import useImageAnimation from './useImageAnimation';
 import * as S from './styles';
 
 interface IParamsProps {
@@ -36,38 +24,16 @@ interface IParamsProps {
 type IParams = RouteProp<Record<string, IParamsProps>, string>;
 
 const ProductDetails = () => {
-	const productId = useRoute<IParams>()?.params?.productId as string;
 	const [productData, setProductData] = useState<ProductProps>({} as ProductProps);
+	const productId = useRoute<IParams>()?.params?.productId as string;
+	const { animatedStyle, scrollHandler } = useImageAnimation();
 	const [isLoading, setIsLoading] = useState(true);
 	const { navigate } = useNavigation();
 	const dispatch = useAppDispatch();
-	const scrollY = useSharedValue(1);
 
 	const isAlreadyInTheCart = useAppSelector(state =>
 		state.cart.products.some(product => product.id === productId)
 	);
-
-	const animatedStyle = useAnimatedStyle(() => {
-		const scale = interpolate(scrollY.value,
-			[0, IMAGE_HEIGHT / 2, IMAGE_HEIGHT], [1, 0.5, 0],
-			{ extrapolateLeft: Extrapolation.CLAMP }
-		);
-		const borderRadius = interpolate(
-			scrollY.value,
-			[0, IMAGE_HEIGHT / 2, IMAGE_HEIGHT], [0, 24, 32],
-			{ extrapolateLeft: Extrapolation.CLAMP }
-		);
-
-		return {
-			opacity: withTiming(scale, { duration: 300, easing: Easing.ease }),
-			borderBottomLeftRadius: withSpring(borderRadius, { mass: 5, damping: 1, stiffness: 200, }),
-			borderBottomRightRadius: withSpring(borderRadius, { mass: 5, damping: 1, stiffness: 200, }),
-		};
-	});
-
-	const scrollHandler = useAnimatedScrollHandler((event) => {
-		scrollY.value = event.contentOffset.y;
-	});
 
 	const handleNavigateBackToPRoductList = () => {
 		// @ts-ignore
@@ -124,23 +90,20 @@ const ProductDetails = () => {
 		);
 	}
 
-	if (isLoading) {
-		return <Loading />;
-	}
+	if (isLoading) return <Loading />;
 
 	return (
 		<SafeAreaViewWrapper>
 			<ScreenHeader />
+			<S.ImageButtonWrapper
+				onPress={() => handleGoToImagePreview(productData.image)}
+			>
+				<S.Image source={{ uri: productData.image }} style={animatedStyle} />
+			</S.ImageButtonWrapper>
 			<Container
 				onScroll={scrollHandler}
 				scrollEventThrottle={16}
 			>
-				<S.ImageButtonWrapper
-					onPress={() => handleGoToImagePreview(productData.image)}
-				>
-					<S.Image source={{ uri: productData.image }} style={animatedStyle} />
-				</S.ImageButtonWrapper>
-
 				<S.Title>{productData.name}</S.Title>
 
 				<S.Description>{productData.description}</S.Description>
