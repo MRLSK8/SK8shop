@@ -6,14 +6,7 @@ import { TouchableOpacityProps } from 'react-native';
 import { ProductProps } from '~/store/ducks/cart.reducer';
 import { numberToCurrency } from '~/helpers';
 
-import {
-	PreviousProductPrice,
-	ProductPrice,
-	PriceWrapper,
-	Container,
-	Image,
-	Title,
-} from './styles';
+import * as S from './styles';
 
 import { styles } from '~/styles';
 
@@ -24,20 +17,20 @@ interface ProductItemProps extends TouchableOpacityProps {
 
 const ProductItem: React.FC<ProductItemProps> = ({ productData, callback }) => {
 	return (
-		<Container
+		<S.Container
 			testID="product-item-btn"
 			onPress={() => callback(productData)}
 			entering={FadeIn.duration(600)}
 			exiting={FadeOut.duration(600)}
 			style={styles.shadow}
 		>
-			<Image source={{ uri: productData.image }} />
-			<Title testID="title">{productData.name}</Title>
-			<PriceWrapper>
-				<PreviousProductPrice>{numberToCurrency(productData.previousPrice)}</PreviousProductPrice>
-				<ProductPrice> {numberToCurrency(productData.price)}</ProductPrice>
-			</PriceWrapper>
-		</Container>
+			<S.Image source={{ uri: productData.image }} />
+			<S.Title testID="title">{productData.name}</S.Title>
+			<S.PriceWrapper>
+				<S.PreviousProductPrice>{numberToCurrency(productData.previousPrice)}</S.PreviousProductPrice>
+				<S.ProductPrice> {numberToCurrency(productData.price)}</S.ProductPrice>
+			</S.PriceWrapper>
+		</S.Container>
 	);
 };
 

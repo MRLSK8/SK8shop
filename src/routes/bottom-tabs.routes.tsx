@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -10,109 +10,104 @@ import MyPurchasesStack from './purchases.routes';
 import ProductsStack from './products.routes';
 import { useAppSelector } from '~/hooks';
 
-import {
-  CartQuantityLabel,
-  CartQuantity,
-  MenuButton,
-  CartButton,
-} from './styles';
+import * as S from './styles';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 declare global {
-  namespace ReactNavigation {
-    interface RootParamList {
-      ProductsStack: string;
-      MyPurchasesStack: string;
-    }
-  }
+	namespace ReactNavigation {
+		interface RootParamList {
+			ProductsStack: string;
+			MyPurchasesStack: string;
+		}
+	}
 }
 
 export default function BottomTabStack({ navigation }: any) {
-  const cartQuantity = useAppSelector(state => state.cart.products.length);
-  const { colors, fonts } = useContext(ThemeContext);
+	const cartQuantity = useAppSelector(state => state.cart.products.length);
+	const { colors, fonts } = useContext(ThemeContext);
 
-  return (
-    <Navigator
-      initialRouteName="ProductsStack"
-      screenOptions={{
-        headerShown: true,
-        headerTitleAlign: 'center',
-        tabBarActiveTintColor: colors.secondary,
-        tabBarInactiveTintColor: colors.white200,
-        tabBarStyle: {
-          backgroundColor: colors.dark100,
-          borderTopWidth: 0,
-          elevation: 0,
-          padding: 16,
-          height: 70,
-        },
-        tabBarLabelStyle: {
-          fontFamily: fonts.Ubuntu.Regular,
-          textAlign: 'center',
-          letterSpacing: 0,
-          marginBottom: 8,
-          lineHeight: 15,
-          marginTop: 4,
-          fontSize: 14,
-        },
-        headerStyle: {
-          backgroundColor: colors.dark100,
-          elevation: 0,
-        },
-        headerLeft: () => (
-          <MenuButton onPress={() => navigation.openDrawer()}>
-            <Entypo
-              size={32}
-              name={'menu'}
-              color={colors.white200}
-            />
-          </MenuButton>
-        ),
-        headerRight: () => (
-          <CartButton onPress={() => navigation.navigate('ShoppingCart')}>
-            <Ionicons
-              size={28}
-              name={'ios-cart-outline'}
-              color={colors.white200}
-            />
-            <CartQuantity withPlus={cartQuantity > 99}>
-              <CartQuantityLabel>
-                {cartQuantity > 99 ? '99+' : cartQuantity}
-              </CartQuantityLabel>
-            </CartQuantity>
-          </CartButton>
-        )
-      }}
-    >
-      <Screen
-        name="ProductsStack"
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color }) =>
-            <Feather
-              size={22}
-              name={'home'}
-              color={color}
-            />
-        }}
-        component={ProductsStack}
-      />
-      <Screen
-        name="MyPurchasesStack"
-        options={{
-          tabBarLabel: 'Meus Pedidos',
-          tabBarIcon: ({ color }) =>
-            <Ionicons
-              size={26}
-              name={'list-outline'}
-              color={color}
-            />
-          ,
-        }}
-        component={MyPurchasesStack}
-      />
+	return (
+		<Navigator
+			initialRouteName="ProductsStack"
+			screenOptions={{
+				headerShown: true,
+				headerTitleAlign: 'center',
+				tabBarActiveTintColor: colors.secondary,
+				tabBarInactiveTintColor: colors.white200,
+				tabBarStyle: {
+					backgroundColor: colors.dark100,
+					borderTopWidth: 0,
+					elevation: 0,
+					padding: 16,
+					height: 70,
+				},
+				tabBarLabelStyle: {
+					fontFamily: fonts.Ubuntu.Regular,
+					textAlign: 'center',
+					letterSpacing: 0,
+					marginBottom: 8,
+					lineHeight: 15,
+					marginTop: 4,
+					fontSize: 14,
+				},
+				headerStyle: {
+					backgroundColor: colors.dark100,
+					elevation: 0,
+				},
+				headerLeft: () => (
+					<S.MenuButton onPress={() => navigation.openDrawer()}>
+						<Entypo
+							size={32}
+							name={'menu'}
+							color={colors.white200}
+						/>
+					</S.MenuButton>
+				),
+				headerRight: () => (
+					<S.CartButton onPress={() => navigation.navigate('ShoppingCart')}>
+						<Ionicons
+							size={28}
+							name={'ios-cart-outline'}
+							color={colors.white200}
+						/>
+						<S.CartQuantity withPlus={cartQuantity > 99}>
+							<S.CartQuantityLabel>
+								{cartQuantity > 99 ? '99+' : cartQuantity}
+							</S.CartQuantityLabel>
+						</S.CartQuantity>
+					</S.CartButton>
+				)
+			}}
+		>
+			<Screen
+				name="ProductsStack"
+				options={{
+					tabBarLabel: 'Home',
+					tabBarIcon: ({ color }) =>
+						<Feather
+							size={22}
+							name={'home'}
+							color={color}
+						/>
+				}}
+				component={ProductsStack}
+			/>
+			<Screen
+				name="MyPurchasesStack"
+				options={{
+					tabBarLabel: 'Meus Pedidos',
+					tabBarIcon: ({ color }) =>
+						<Ionicons
+							size={26}
+							name={'list-outline'}
+							color={color}
+						/>
+					,
+				}}
+				component={MyPurchasesStack}
+			/>
 
-    </Navigator>
-  );
+		</Navigator>
+	);
 };

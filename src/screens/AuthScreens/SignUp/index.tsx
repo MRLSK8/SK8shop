@@ -5,11 +5,7 @@ import { Text } from 'react-native';
 
 import { showErrorAlert } from '~/helpers';
 
-import {
-	SignUpButtonLabel,
-	SignUpButton,
-	Container,
-} from './styles';
+import * as S from './styles';
 
 const SignUp = () => {
 	const handleSignUp = async () => {
@@ -25,17 +21,17 @@ const SignUp = () => {
 	}
 
 	return (
-		<Container>
+		<S.Container>
 			<Text>SignUp</Text>
-			<SignUpButton
+			<S.SignUpButton
 				testID={'login-btn'}
 				onPress={handleSignUp}
 			>
-				<SignUpButtonLabel>
+				<S.SignUpButtonLabel>
 					cadastre-se
-				</SignUpButtonLabel>
-			</SignUpButton>
-		</Container>
+				</S.SignUpButtonLabel>
+			</S.SignUpButton>
+		</S.Container>
 	);
 };
 

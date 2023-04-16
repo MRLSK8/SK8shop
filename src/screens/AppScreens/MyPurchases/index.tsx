@@ -10,22 +10,7 @@ import {
 } from '~/store/actions/purchases/purchases.actions';
 
 import { Container, SafeAreaViewWrapper, styles } from '~/styles';
-import {
-	PreviousProductPrice,
-	EmptyPurchasesLabel,
-	RemoveItemButton,
-	PurchaseHeader,
-	ContentWrapper,
-	PriceWrapper,
-	TrashCanIcon,
-	ProductPrice,
-	Description,
-	ProductName,
-	Product,
-	Title,
-	Image,
-} from './styles';
-
+import * as S from './styles';
 
 const MyPurchases = () => {
 	const products = useAppSelector(state => state.purchases.products);
@@ -45,49 +30,49 @@ const MyPurchases = () => {
 	return (
 		<SafeAreaViewWrapper>
 			<ScreenHeader />
-			<Title>
+			<S.Title>
 				Meus pedidos
-			</Title>
+			</S.Title>
 			<Container>
 				{
 					products.map(product => (
-						<Product
+						<S.Product
 							key={product.id + product.purchaseDate + product.purchaseNumber}
 							onPress={() => handleGoToProductDetails(product)}
 							style={styles.shadow}
 						>
-							<Image source={{ uri: product.image }} />
-							<ContentWrapper>
-								<PurchaseHeader>
-									<ProductName>
+							<S.Image source={{ uri: product.image }} />
+							<S.ContentWrapper>
+								<S.PurchaseHeader>
+									<S.ProductName>
 										{product.name}
-									</ProductName>
-									<RemoveItemButton
+									</S.ProductName>
+									<S.RemoveItemButton
 										onPress={() => handleRemoveProductFromPurchases(product)}
 									>
-										<TrashCanIcon />
-									</RemoveItemButton>
-								</PurchaseHeader>
+										<S.TrashCanIcon />
+									</S.RemoveItemButton>
+								</S.PurchaseHeader>
 
-								<Description>
+								<S.Description>
 									{product.description}
-								</Description>
-								<PriceWrapper>
-									<PreviousProductPrice>
+								</S.Description>
+								<S.PriceWrapper>
+									<S.PreviousProductPrice>
 										{numberToCurrency(product.previousPrice)}
-									</PreviousProductPrice>
-									<ProductPrice> {numberToCurrency(product.price)}</ProductPrice>
-								</PriceWrapper>
-							</ContentWrapper>
-						</Product>
+									</S.PreviousProductPrice>
+									<S.ProductPrice> {numberToCurrency(product.price)}</S.ProductPrice>
+								</S.PriceWrapper>
+							</S.ContentWrapper>
+						</S.Product>
 					))
 				}
 
 				{
 					!products.length && (
-						<EmptyPurchasesLabel>
+						<S.EmptyPurchasesLabel>
 							Nenhum pedido...
-						</EmptyPurchasesLabel>
+						</S.EmptyPurchasesLabel>
 					)
 				}
 			</Container>

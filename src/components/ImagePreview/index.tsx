@@ -1,34 +1,33 @@
 import React, { useCallback } from 'react';
-import { useRoute, useNavigation } from '@react-navigation/native';
+import { useRoute, useNavigation, RouteProp } from '@react-navigation/native';
 
-import {
-  PaperIconButton,
-  ImageZoomable,
-  CompressIcon,
-  Container,
-  Image,
-} from './styles';
+import * as S from './styles';
+interface IParamsProps {
+	imageUri: string;
+}
+
+type IParams = RouteProp<Record<string, IParamsProps>, string>;
 
 const ImagePreview: React.FC = () => {
-  const imageUri = useRoute<any>().params?.imageUri;
-  const { goBack } = useNavigation();
+	const imageUri = useRoute<IParams>().params?.imageUri;
+	const { goBack } = useNavigation();
 
-  const closePreview = useCallback(() => {
-    goBack();
-  }, []);
+	const closePreview = useCallback(() => {
+		goBack();
+	}, []);
 
-  return (
-    <Container>
-      <ImageZoomable >
-        <Image source={{ uri: imageUri }} />
-      </ImageZoomable>
+	return (
+		<S.Container>
+			<S.ImageZoomable >
+				<S.Image source={{ uri: imageUri }} />
+			</S.ImageZoomable>
 
-      <PaperIconButton
-        icon={(props: any) => <CompressIcon  {...props} />}
-        onPress={closePreview}
-      />
-    </Container>
-  );
+			<S.PaperIconButton
+				icon={(props: any) => <S.CompressIcon  {...props} />}
+				onPress={closePreview}
+			/>
+		</S.Container>
+	);
 };
 
 export default ImagePreview;

@@ -10,16 +10,7 @@ import { showErrorAlert } from '~/helpers';
 
 import { SafeAreaViewWrapper } from '~/styles';
 
-import {
-	OrderOptionRadioButtonSelected,
-	OrderOptionRadioButton,
-	OrderOptionLabel,
-	OrderOptions,
-	OrderOption,
-	ProductList,
-	OrderLabel,
-	Container,
-} from './styles';
+import * as S from './styles';
 
 type orderByOptions = 'name' | 'price';
 
@@ -78,33 +69,33 @@ const ProductsList = () => {
 
 	return (
 		<SafeAreaViewWrapper>
-			<Container testID={"product-list-wrapper"}>
-				<OrderLabel>Ordenar por:</OrderLabel>
+			<S.Container testID={"product-list-wrapper"}>
+				<S.OrderLabel>Ordenar por:</S.OrderLabel>
 
-				<OrderOptions>
-					<OrderOption onPress={() => setOrderOption('name')}>
-						<OrderOptionRadioButton>
-							{orderOption === 'name' && <OrderOptionRadioButtonSelected />}
-						</OrderOptionRadioButton>
-						<OrderOptionLabel>Ordem alfabética</OrderOptionLabel>
-					</OrderOption>
-					<OrderOption
+				<S.OrderOptions>
+					<S.OrderOption onPress={() => setOrderOption('name')}>
+						<S.OrderOptionRadioButton>
+							{orderOption === 'name' && <S.OrderOptionRadioButtonSelected />}
+						</S.OrderOptionRadioButton>
+						<S.OrderOptionLabel>Ordem alfabética</S.OrderOptionLabel>
+					</S.OrderOption>
+					<S.OrderOption
 						testID={"filter-by-price-btn"}
 						onPress={() => setOrderOption('price')}
 					>
-						<OrderOptionRadioButton>
-							{orderOption === 'price' && <OrderOptionRadioButtonSelected />}
-						</OrderOptionRadioButton>
-						<OrderOptionLabel>Menor preço</OrderOptionLabel>
-					</OrderOption>
-				</OrderOptions>
+						<S.OrderOptionRadioButton>
+							{orderOption === 'price' && <S.OrderOptionRadioButtonSelected />}
+						</S.OrderOptionRadioButton>
+						<S.OrderOptionLabel>Menor preço</S.OrderOptionLabel>
+					</S.OrderOption>
+				</S.OrderOptions>
 
-				<ProductList
+				<S.ProductList
 					data={products}
 					renderItem={renderItem}
 					keyExtractor={(item: any) => item.id}
 				/>
-			</Container>
+			</S.Container>
 		</SafeAreaViewWrapper>
 	);
 };

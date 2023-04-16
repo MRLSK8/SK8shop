@@ -8,11 +8,7 @@ import { Divider, Loading } from '~/components';
 import { showErrorAlert } from '~/helpers';
 import { useAppDispatch } from '~/hooks';
 
-import {
-	SignInButtonLabel,
-	SignInButton,
-	Container,
-} from './styles';
+import * as S from './styles';
 
 const SignIn = () => {
 	const { reset, navigate } = useNavigation();
@@ -81,49 +77,49 @@ const SignIn = () => {
 	}
 
 	return (
-		<Container>
-			<SignInButton
+		<S.Container>
+			<S.SignInButton
 				testID={'login-btn'}
 				onPress={handleLogin}
 			>
-				<SignInButtonLabel>
+				<S.SignInButtonLabel>
 					Login
-				</SignInButtonLabel>
-			</SignInButton>
+				</S.SignInButtonLabel>
+			</S.SignInButton>
 
 			<Divider containerWidth={90} text="Esqueceu a senha?" marginVertical={22} />
 
-			<SignInButton
+			<S.SignInButton
 				testID={'login-btn'}
 				onPress={handleForgotPassword}
 			>
-				<SignInButtonLabel>
+				<S.SignInButtonLabel>
 					Esqueci a senha
-				</SignInButtonLabel>
-			</SignInButton>
+				</S.SignInButtonLabel>
+			</S.SignInButton>
 
 			<Divider containerWidth={90} text="Ou login com" marginVertical={22} />
 
-			<SignInButton
+			<S.SignInButton
 				testID={'login-btn'}
 				onPress={handleSignInAnonymously}
 			>
-				<SignInButtonLabel>
+				<S.SignInButtonLabel>
 					Login anonymously
-				</SignInButtonLabel>
-			</SignInButton>
+				</S.SignInButtonLabel>
+			</S.SignInButton>
 
 			<Divider containerWidth={90} text="Não tem uma conta? " marginVertical={22} />
 
-			<SignInButton
+			<S.SignInButton
 				testID={'login-btn'}
 				onPress={handleNavigationToSignUp}
 			>
-				<SignInButtonLabel>
+				<S.SignInButtonLabel>
 					cadastre-se
-				</SignInButtonLabel>
-			</SignInButton>
-		</Container>
+				</S.SignInButtonLabel>
+			</S.SignInButton>
+		</S.Container>
 	);
 };
 

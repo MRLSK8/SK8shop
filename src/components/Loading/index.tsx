@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Container, Loadingndicator } from './styles';
+import * as S from './styles';
 
 const Loading = () => {
-  return (
-    <Container>
-      <Loadingndicator />
-    </Container>
-  );
+	return (
+		<S.Container>
+			<S.Loadingndicator />
+		</S.Container>
+	);
 };
 
 export default Loading;

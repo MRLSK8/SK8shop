@@ -25,21 +25,9 @@ import { ScreenHeader, Loading } from '~/components';
 
 import { Container, SafeAreaViewWrapper } from '~/styles';
 
-import {
-	GoBackToProductListButtonLabel,
-	GoBackToProductListButton,
-	AddToCartButtonLabel,
-	PreviousProductPrice,
-	ImageButtonWrapper,
-	DescriptionWrapper,
-	ShoppingCartIcon,
-	AddToCartButton,
-	ProductPrice,
-	IMAGE_HEIGHT,
-	Description,
-	Title,
-	Image,
-} from './styles';
+import { IMAGE_HEIGHT } from './styles';
+
+import * as S from './styles';
 
 interface IParamsProps {
 	productId: string;
@@ -147,17 +135,17 @@ const ProductDetails = () => {
 				onScroll={scrollHandler}
 				scrollEventThrottle={16}
 			>
-				<ImageButtonWrapper
+				<S.ImageButtonWrapper
 					onPress={() => handleGoToImagePreview(productData.image)}
 				>
-					<Image source={{ uri: productData.image }} style={animatedStyle} />
-				</ImageButtonWrapper>
+					<S.Image source={{ uri: productData.image }} style={animatedStyle} />
+				</S.ImageButtonWrapper>
 
-				<Title>{productData.name}</Title>
+				<S.Title>{productData.name}</S.Title>
 
-				<Description>{productData.description}</Description>
+				<S.Description>{productData.description}</S.Description>
 
-				<Description>
+				<S.Description>
 					Garantia do Fornecedor: {productData.SupplierWarranty}
 					{'\n'}
 					Cor: {productData.color}
@@ -165,28 +153,28 @@ const ProductDetails = () => {
 					País de origem: {productData.countryOfOrigin}
 					{'\n'}
 					Tipo de frete: {productData.TypeOfShipping}
-				</Description>
+				</S.Description>
 
-				<Description>
-					de <PreviousProductPrice>{numberToCurrency(productData.previousPrice)}</PreviousProductPrice>
+				<S.Description>
+					de <S.PreviousProductPrice>{numberToCurrency(productData.previousPrice)}</S.PreviousProductPrice>
 					{'\n'}
-					por <ProductPrice>{numberToCurrency(productData.price)}</ProductPrice>
-				</Description>
+					por <S.ProductPrice>{numberToCurrency(productData.price)}</S.ProductPrice>
+				</S.Description>
 
-				<AddToCartButton
+				<S.AddToCartButton
 					isAlreadyInTheCart={isAlreadyInTheCart}
 					onPress={() =>
 						isAlreadyInTheCart ? handleNavigateToCart() : handleAddProductToCart(productData)}
 				>
-					<AddToCartButtonLabel>
+					<S.AddToCartButtonLabel>
 						{isAlreadyInTheCart ? 'Ir para o carrinho' : 'Adicionar ao carrinho'}
-					</AddToCartButtonLabel>
+					</S.AddToCartButtonLabel>
 					{
 						isAlreadyInTheCart && (
-							<ShoppingCartIcon />
+							<S.ShoppingCartIcon />
 						)
 					}
-				</AddToCartButton>
+				</S.AddToCartButton>
 			</Container>
 		</SafeAreaViewWrapper >
 	);

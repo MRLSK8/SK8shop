@@ -17,25 +17,8 @@ import {
 } from '~/store/actions/shoppingCart/cart.actions';
 
 import { Container, SafeAreaViewWrapper, styles } from '~/styles';
-import {
-	FinishPurchaseButtonLabel,
-	RemoveItemButtonLabel,
-	FinishPurchaseButton,
-	PreviousProductPrice,
-	RemoveItemButton,
-	ContentWrapper,
-	EmptyCartLabel,
-	NumberOfItems,
-	TrashCanIcon,
-	ProductPrice,
-	PriceWrapper,
-	Description,
-	ProductName,
-	TotalValue,
-	Product,
-	Image,
-	Title,
-} from './styles';
+
+import * as S from './styles';
 
 const ShoppingCart = () => {
 	const products = useAppSelector(state => state.cart.products);
@@ -80,61 +63,61 @@ const ShoppingCart = () => {
 		<SafeAreaViewWrapper>
 			<ScreenHeader />
 			<Container>
-				<Title>
+				<S.Title>
 					Meu Carrinho {''}
-					<NumberOfItems>({products.length}) {products.length > 1 ? 'itens' : 'item'}
-					</NumberOfItems>
-				</Title>
+					<S.NumberOfItems>({products.length}) {products.length > 1 ? 'itens' : 'item'}
+					</S.NumberOfItems>
+				</S.Title>
 
 				{
 					products.map(product => (
-						<Product
+						<S.Product
 							key={product.id}
 							onPress={() => handleGoToProductDetails(product)}
 							style={styles.shadow}
 						>
-							<Image source={{ uri: product.image }} />
-							<ContentWrapper>
-								<ProductName>
+							<S.Image source={{ uri: product.image }} />
+							<S.ContentWrapper>
+								<S.ProductName>
 									{product.name}
-								</ProductName>
-								<Description>
+								</S.ProductName>
+								<S.Description>
 									{product.description}
-								</Description>
-								<PriceWrapper>
-									<PreviousProductPrice>{numberToCurrency(product.previousPrice)}</PreviousProductPrice>
-									<ProductPrice> {numberToCurrency(product.price)}</ProductPrice>
-								</PriceWrapper>
-								<RemoveItemButton
+								</S.Description>
+								<S.PriceWrapper>
+									<S.PreviousProductPrice>{numberToCurrency(product.previousPrice)}</S.PreviousProductPrice>
+									<S.ProductPrice> {numberToCurrency(product.price)}</S.ProductPrice>
+								</S.PriceWrapper>
+								<S.RemoveItemButton
 									onPress={() => handleRemoveProductFromCart(product.id)}
 								>
-									<TrashCanIcon />
-									<RemoveItemButtonLabel>Remover produto</RemoveItemButtonLabel>
-								</RemoveItemButton>
-							</ContentWrapper>
-						</Product>
+									<S.TrashCanIcon />
+									<S.RemoveItemButtonLabel>Remover produto</S.RemoveItemButtonLabel>
+								</S.RemoveItemButton>
+							</S.ContentWrapper>
+						</S.Product>
 					))
 				}
 
 				{
 					!products.length && (
-						<EmptyCartLabel>
+						<S.EmptyCartLabel>
 							Seu carrinho está vazio..
-						</EmptyCartLabel>
+						</S.EmptyCartLabel>
 					)
 				}
 
-				<TotalValue>
+				<S.TotalValue>
 					Total: {numberToCurrency(totalValue)}
-				</TotalValue>
-				<FinishPurchaseButton
+				</S.TotalValue>
+				<S.FinishPurchaseButton
 					disabled={!products?.length}
 					onPress={() => handleFinishPurchase(products)}
 				>
-					<FinishPurchaseButtonLabel>
+					<S.FinishPurchaseButtonLabel>
 						Finalizar compra
-					</FinishPurchaseButtonLabel>
-				</FinishPurchaseButton>
+					</S.FinishPurchaseButtonLabel>
+				</S.FinishPurchaseButton>
 			</Container>
 		</SafeAreaViewWrapper>
 	);

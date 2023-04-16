@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 
-import { Button, ArrowLeft } from './styles';
+import * as S from './styles';
 
 const GoBackButton: React.FC = () => {
   const { canGoBack, goBack } = useNavigation();
@@ -12,9 +12,9 @@ const GoBackButton: React.FC = () => {
   }
 
   return (
-    <Button onPress={handleGoBack}>
-      <ArrowLeft />
-    </Button>
+    <S.Button onPress={handleGoBack}>
+      <S.ArrowLeft />
+    </S.Button>
   );
 };
 

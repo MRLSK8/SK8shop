@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 
-import { Text, TextInput, Button } from 'react-native';
-import { Container, Input } from './styles';
+import { Text, Button } from 'react-native';
+import * as S from './styles';
 
 const TestScreen = () => {
 	const [lastName, setLastName] = useState('');
@@ -14,15 +14,15 @@ const TestScreen = () => {
 	}
 
 	return (
-		<Container>
+		<S.Container>
 			<Text testID='screen-title'>Test Screen</Text>
 
-			<Input
+			<S.Input
 				placeholder="Name"
 				onChange={value => setName(value.toString())}
 			/>
 
-			<Input
+			<S.Input
 				placeholder="Sobrenome"
 				onChange={value => setLastName(value.toString())}
 			/>
@@ -32,7 +32,7 @@ const TestScreen = () => {
 				color={"blue"}
 				onPress={() => handleOnPress(name + lastName)}
 			/>
-		</Container>
+		</S.Container>
 	);
 };
 
