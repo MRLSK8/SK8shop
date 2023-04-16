@@ -3,8 +3,8 @@ import React from 'react';
 import { FadeIn, FadeOut } from 'react-native-reanimated';
 import { TouchableOpacityProps } from 'react-native';
 
-import { numberToCurrency } from '~/helpers/numberToCurrency';
 import { ProductProps } from '~/store/ducks/cart.reducer';
+import { numberToCurrency } from '~/helpers';
 
 import {
 	PreviousProductPrice,

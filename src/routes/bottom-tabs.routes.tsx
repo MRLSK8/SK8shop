@@ -6,9 +6,9 @@ import { ThemeContext } from 'styled-components/native';
 import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-import { useAppSelector } from '~/hooks/reduxHooks';
 import MyPurchasesStack from './purchases.routes';
 import ProductsStack from './products.routes';
+import { useAppSelector } from '~/hooks';
 
 import {
   CartQuantityLabel,

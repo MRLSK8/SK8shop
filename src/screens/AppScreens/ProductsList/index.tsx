@@ -5,9 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import lodash from 'lodash';
 
 import { ProductProps } from '~/store/ducks/cart.reducer';
-import ProductItem from '~/components/ProductItem';
-import { showErrorAlert } from '~/helpers/alerts';
-import Loading from '~/components/Loading';
+import { Loading, ProductItem } from '~/components';
+import { showErrorAlert } from '~/helpers';
 
 import { SafeAreaViewWrapper } from '~/styles';
 

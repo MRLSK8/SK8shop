@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import firestore from '@react-native-firebase/firestore';
+
 import {
 	useAnimatedScrollHandler,
 	useAnimatedStyle,
@@ -11,19 +12,19 @@ import {
 	Easing,
 	withSpring
 } from 'react-native-reanimated';
-import { useNavigation } from '@react-navigation/native';
+
+import { RouteProp, useNavigation } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
 import lodash from 'lodash';
 
 import { addProductToCart } from '~/store/actions/shoppingCart/cart.actions';
-import { useAppDispatch, useAppSelector } from '~/hooks/reduxHooks';
-import { numberToCurrency } from '~/helpers/numberToCurrency';
+import { numberToCurrency, showErrorAlert } from '~/helpers';
+import { useAppDispatch, useAppSelector } from '~/hooks';
 import { ProductProps } from '~/store/ducks/cart.reducer';
-import ScreenHeader from '~/components/ScreenHeader';
-import { showErrorAlert } from '~/helpers/alerts';
-import Loading from '~/components/Loading';
+import { ScreenHeader, Loading } from '~/components';
 
 import { Container, SafeAreaViewWrapper } from '~/styles';
+
 import {
 	GoBackToProductListButtonLabel,
 	GoBackToProductListButton,
@@ -40,8 +41,14 @@ import {
 	Image,
 } from './styles';
 
+interface IParamsProps {
+	productId: string;
+}
+
+type IParams = RouteProp<Record<string, IParamsProps>, string>;
+
 const ProductDetails = () => {
-	const productId = useRoute<any>()?.params?.productId as string;
+	const productId = useRoute<IParams>()?.params?.productId as string;
 	const [productData, setProductData] = useState<ProductProps>({} as ProductProps);
 	const [isLoading, setIsLoading] = useState(true);
 	const { navigate } = useNavigation();

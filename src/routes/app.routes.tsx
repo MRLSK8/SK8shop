@@ -12,8 +12,8 @@ import {
 } from '@react-navigation/drawer';
 
 import { logout } from '~/store/actions/auth/auth.actions';
-import { useAppDispatch } from '~/hooks/reduxHooks';
 import BottomTab from './bottom-tabs.routes';
+import { useAppDispatch } from '~/hooks';
 
 import {
   DrawerItemWrapperLogOut,

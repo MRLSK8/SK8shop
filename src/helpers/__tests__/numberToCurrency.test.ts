@@ -1,4 +1,4 @@
-import { numberToCurrency } from '~/helpers/numberToCurrency';
+import { numberToCurrency } from '~/helpers';
 
 describe('Formatting number to currency', () => {
   it('should format from 10 to R$ 10,00', () => {
