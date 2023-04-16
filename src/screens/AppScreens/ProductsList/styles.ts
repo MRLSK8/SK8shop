@@ -31,14 +31,14 @@ export const OrderLabel = styled.Text`
 `;
 
 export const OrderOptions = styled.View`
+  margin: 10px 10px 12px;
   flex-direction: row;
-  margin: 10px 0 12px;
+	gap: 12px;
 `;
 
 export const OrderOption = styled(Pressable)`
   flex-direction: row;
   align-items: center;
-  margin-left: 12px;
 `;
 
 export const OrderOptionLabel = styled.Text`
