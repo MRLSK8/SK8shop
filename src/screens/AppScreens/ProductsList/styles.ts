@@ -1,5 +1,8 @@
 import styled from 'styled-components/native';
-import { Pressable } from 'react-native';
+import { FlatList, Pressable } from 'react-native';
+
+import { ProductProps } from '~/store/ducks/cart.reducer';
+import { FlatListType } from '~/@types/types';
 
 export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.white200};
@@ -13,11 +16,11 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.secondary};
 `;
 
-export const ProductList = styled.FlatList.attrs({
-  numColumns: 2,
-  contentContainerStyle: {
-    paddingBottom: 10,
-  }
+export const ProductList = styled(FlatList as FlatListType<ProductProps>).attrs({
+	numColumns: 2,
+	contentContainerStyle: {
+		paddingBottom: 10,
+	}
 })`
   flex: 1;
 `;

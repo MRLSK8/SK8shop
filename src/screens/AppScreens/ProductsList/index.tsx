@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import firestore from '@react-native-firebase/firestore';
 import { useNavigation } from '@react-navigation/native';
+import { ListRenderItemInfo } from 'react-native';
 import lodash from 'lodash';
 
 import { ProductProps } from '~/store/ducks/cart.reducer';
@@ -29,7 +30,7 @@ const ProductsList = () => {
 		return lodash.orderBy(_products ?? products, [orderOption], ['asc']);
 	}, [products, orderOption]);
 
-	const renderItem = ({ item }: any) => (
+	const renderItem = ({ item }: ListRenderItemInfo<ProductProps>) => (
 		<ProductItem
 			callback={(productData) => handleItemClicked(productData)}
 			productData={item}
@@ -93,7 +94,7 @@ const ProductsList = () => {
 				<S.ProductList
 					data={products}
 					renderItem={renderItem}
-					keyExtractor={(item: any) => item.id}
+					keyExtractor={(item) => item.id}
 				/>
 			</S.Container>
 		</SafeAreaViewWrapper>
