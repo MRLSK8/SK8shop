@@ -9,9 +9,7 @@ const TestScreen = () => {
 	const [lastName, setLastName] = useState('');
 	const [name, setName] = useState('');
 
-	const handleOnPress = (name: string) => {
-		console.log(name);
-	}
+	const handleOnPress = (name: string) => { }
 
 	return (
 		<S.Container>

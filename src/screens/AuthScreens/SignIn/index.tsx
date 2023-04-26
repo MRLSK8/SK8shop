@@ -64,9 +64,7 @@ const SignIn = () => {
 		try {
 			await auth().sendPasswordResetEmail("jmdl.k8@gmail.com");
 			showErrorAlert("Email enviado!", "Verifique sua caixa de entrada.");
-		} catch (error) {
-			console.log("Error: ", error);
-		}
+		} catch (error) {}
 	};
 
 	if (isLoading) {
