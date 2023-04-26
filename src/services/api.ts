@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-const api = axios.create({
-  // Website for more details about this api: https://reqres.in/
-  baseURL: 'https://reqres.in/api/' // base url for testing api calls. 
+export const api = axios.create({
+	baseURL: 'https://64498860b88a78a8f00a622b.mockapi.io'
 });
-
-export default api;

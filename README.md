@@ -37,6 +37,8 @@ Objective:
 ## Technologies
 
 :white_check_mark: React Native\
+:white_check_mark: React Query\
+:white_check_mark: React Native Code Push\
 :white_check_mark: Styled-components\
 :white_check_mark: Firebase (Firestore, Authentication)\
 :white_check_mark: Axios\
@@ -129,10 +131,10 @@ The file structure are in the following way:
 │   │   ├── GoBackButton/
 |   |   |   ├── index.tsx
 |   |   |   └── style.ts
-|   |   ├── ImagePreview/ 
+|   |   ├── ImagePreview/
 |   |   |   ├── index.tsx
 |   |   |   └── style.ts
-|   |   ├── ProductItem/ 
+|   |   ├── ProductItem/
 |   |   |   ├── index.tsx
 |   |   |    style.ts
 │   │   └── ScreenHeader/
@@ -154,23 +156,23 @@ The file structure are in the following way:
 │   │   └── styles.ts
 │   ├── screens/
 │   │   ├── AppScreens/
-|   |   |   ├── myPurchases/ 
+|   |   |   ├── myPurchases/
 |   |   |   |   ├── index.tsx
 |   |   |   |   └── style.ts
-|   |   |   ├── productDetails/ 
+|   |   |   ├── productDetails/
 |   |   |   |   ├── index.tsx
 |   |   |   |   └── style.ts
-|   |   |   ├── productsList/ 
+|   |   |   ├── productsList/
 |   |   |   |   ├── index.tsx
 |   |   |   |   └── style.ts
-|   |   |   └── shoppingCart/ 
+|   |   |   └── shoppingCart/
 |   |   |       ├── index.tsx
 |   |   |       └── style.ts
-|   |   └── AuthScreens/ 
-|   |       ├── signIn/ 
+|   |   └── AuthScreens/
+|   |       ├── signIn/
 |   |       |   ├── index.tsx
 |   |       |   └── style.ts
-|   |       └── signUp/ 
+|   |       └── signUp/
 |   |           ├── index.tsx
 |   |           └── style.ts
 │   ├── services/
