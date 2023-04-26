@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
-import { ListRenderItemInfo } from 'react-native';
+import { FlashList, ListRenderItemInfo } from '@shopify/flash-list';
 
 import { ProductProps } from '~/store/ducks/cart.reducer';
 import { Loading, ProductItem } from '~/components';
@@ -55,6 +55,7 @@ const ProductsList = () => {
 					data={products}
 					renderItem={renderItem}
 					keyExtractor={(item) => item.id}
+					estimatedItemSize={30}
 				/>
 			</S.Container>
 		</SafeAreaViewWrapper>

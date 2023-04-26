@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
-import { FlatList, Pressable } from 'react-native';
+
+import { FlashList as FlatList } from "@shopify/flash-list";
+import { Pressable } from 'react-native';
 
 import { ProductProps } from '~/store/ducks/cart.reducer';
 import { FlatListType } from '~/@types/types';
@@ -21,9 +23,7 @@ export const ProductList = styled(FlatList as FlatListType<ProductProps>).attrs(
 	contentContainerStyle: {
 		paddingBottom: 10,
 	}
-})`
-  flex: 1;
-`;
+})``;
 
 export const OrderLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};

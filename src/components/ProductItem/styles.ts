@@ -18,7 +18,7 @@ export const Container = styled(AnimatedTouchableOpacity).attrs({
   align-items: center;
   border-radius: 8px;
   margin: 10px;
-  width: 45%;
+  width: 90%;
 `;
 
 export const Image = styled(FastImage).attrs({
