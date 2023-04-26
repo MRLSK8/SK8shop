@@ -22,7 +22,6 @@ const ProductsList = () => {
 	const { navigate } = useNavigation();
 
 	const handleItemClicked = useCallback((productData: ProductProps) => {
-		// @ts-ignore
 		navigate('ProductsDetails', { productId: productData.id });
 	}, []);
 
@@ -64,9 +63,7 @@ const ProductsList = () => {
 		setProducts(_products);
 	}, [orderOption]);
 
-	if (isLoading) {
-		return <Loading />;
-	}
+	if (isLoading) return <Loading />;
 
 	return (
 		<SafeAreaViewWrapper>

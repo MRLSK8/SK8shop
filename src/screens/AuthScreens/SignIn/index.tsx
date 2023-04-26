@@ -16,7 +16,6 @@ const SignIn = () => {
 	const dispatch = useAppDispatch();
 
 	const handleNavigationToSignUp = () => {
-		// @ts-ignore
 		navigate("SignUp");
 	}
 

@@ -36,7 +36,6 @@ const ProductDetails = () => {
 	);
 
 	const handleNavigateBackToPRoductList = () => {
-		// @ts-ignore
 		navigate('Products');
 	}
 
@@ -45,13 +44,11 @@ const ProductDetails = () => {
 	}
 
 	const handleNavigateToCart = () => {
-		// @ts-ignore
 		navigate('ShoppingCart');
 	}
 
 	const handleGoToImagePreview = (imageUri: string) => {
 		if (!imageUri) return;
-		// @ts-ignore
 		navigate('ImagePreview', { imageUri });
 	}
 

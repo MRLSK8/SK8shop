@@ -18,8 +18,7 @@ const MyPurchases = () => {
 	const dispatch = useAppDispatch();
 
 	const handleGoToProductDetails = (productData: ProductProps) => {
-		// @ts-ignore
-		navigate('ProductsDetails', { productData });
+		navigate('ProductsDetails', { productId: productData.id });
 	};
 
 	const handleRemoveProductFromPurchases = (productData: ProductProps) => {

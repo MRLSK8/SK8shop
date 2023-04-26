@@ -9,32 +9,32 @@ import SignUp from '~/screens/AuthScreens/SignUp';
 const { Screen, Navigator } = createNativeStackNavigator();
 
 declare global {
-  namespace ReactNavigation {
-    interface RootParamList {
-      LogIn: string;
-      SignUp: string;
-    }
-  }
+	namespace ReactNavigation {
+		interface RootParamList {
+			LogIn: unknown;
+			SignUp: unknown;
+		}
+	}
 }
 
 export default function AuthStack() {
-  return (
-    <Navigator
-      screenOptions={{
-        headerShown: false,
-      }
-      }
-      initialRouteName="LogIn"
-    >
-      <Screen
-        name="LogIn"
-        component={LogIn}
-      />
+	return (
+		<Navigator
+			screenOptions={{
+				headerShown: false,
+			}
+			}
+			initialRouteName="LogIn"
+		>
+			<Screen
+				name="LogIn"
+				component={LogIn}
+			/>
 
-      <Screen
-        name="SignUp"
-        component={SignUp}
-      />
-    </Navigator>
-  );
+			<Screen
+				name="SignUp"
+				component={SignUp}
+			/>
+		</Navigator>
+	);
 }

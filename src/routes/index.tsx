@@ -16,9 +16,9 @@ const { Screen, Navigator } = createNativeStackNavigator();
 declare global {
 	namespace ReactNavigation {
 		interface RootParamList {
-			AppStack: string;
-			AuthStack: string;
-			ImagePreview: string;
+			AppStack: unknown;
+			AuthStack: unknown;
+			ImagePreview: { imageUri: string };
 		}
 	}
 }

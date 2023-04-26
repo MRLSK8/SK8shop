@@ -1,13 +1,17 @@
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FastImage from 'react-native-fast-image';
+import Animated from 'react-native-reanimated';
 import styled from 'styled-components/native';
 import { Pressable } from 'react-native';
-import Animated from 'react-native-reanimated';
 
-const Pressable2 = Animated.createAnimatedComponent(FastImage as any);
+const CachedImage = Animated.createAnimatedComponent(FastImage as any);
 export const IMAGE_HEIGHT = 180;
 
-export const Image = styled(Pressable2).attrs({
+interface AddToCartButton {
+	isAlreadyInTheCart: boolean;
+}
+
+export const Image = styled(CachedImage as any).attrs({
 	resizeMode: 'cover'
 })`
   height: ${IMAGE_HEIGHT}px;
@@ -33,7 +37,7 @@ export const Description = styled.Text`
 
 export const AddToCartButton = styled.TouchableOpacity.attrs({
 	activeOpacity: 0.7
-}) <{ isAlreadyInTheCart: boolean }>`
+}) <AddToCartButton>`
   background-color: ${(props) => props.isAlreadyInTheCart ? props.theme.colors.tertiary : props.theme.colors.primary};
   justify-content: center;
   align-items: center;

@@ -45,13 +45,11 @@ const ShoppingCart = () => {
 		}));
 
 		dispatch(addProductsToPurchases(purchases));
-		// @ts-ignore
 		navigate('MyPurchasesStack');
 	}
 
 	const handleGoToProductDetails = (productData: ProductProps) => {
-		// @ts-ignore
-		navigate('ProductsDetails', { productData });
+		navigate('ProductsDetails', { productId: productData.id });
 	};
 
 	useLayoutEffect(() => {

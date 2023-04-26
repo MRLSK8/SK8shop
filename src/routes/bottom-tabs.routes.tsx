@@ -17,8 +17,8 @@ const { Navigator, Screen } = createBottomTabNavigator();
 declare global {
 	namespace ReactNavigation {
 		interface RootParamList {
-			ProductsStack: string;
-			MyPurchasesStack: string;
+			ProductsStack: unknown;
+			MyPurchasesStack: unknown;
 		}
 	}
 }

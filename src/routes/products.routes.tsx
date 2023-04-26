@@ -9,25 +9,26 @@ import shoppingCart from '~/screens/AppScreens/ShoppingCart';
 const { Screen, Navigator } = createNativeStackNavigator();
 
 declare global {
-  namespace ReactNavigation {
-    interface RootParamList {
-      Products: string;
-      ProductsDetails: string;
-    }
-  }
+	namespace ReactNavigation {
+		interface RootParamList {
+			Products: unknown;
+			ProductsDetails: { productId: string };
+			ShoppingCart: unknown;
+		}
+	}
 }
 
 export default function PurchasesStack() {
-  return (
-    <Navigator
-      screenOptions={{
-        headerShown: false
-      }}
-      initialRouteName="Products"
-    >
-      <Screen name="Products" component={productsList} />
-      <Screen name="ShoppingCart" component={shoppingCart} />
-      <Screen name="ProductsDetails" component={productDetails} />
-    </Navigator>
-  );
+	return (
+		<Navigator
+			screenOptions={{
+				headerShown: false
+			}}
+			initialRouteName="Products"
+		>
+			<Screen name="Products" component={productsList} />
+			<Screen name="ShoppingCart" component={shoppingCart} />
+			<Screen name="ProductsDetails" component={productDetails} />
+		</Navigator>
+	);
 }
