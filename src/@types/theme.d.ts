@@ -1,9 +1,7 @@
 import 'styled-components';
 
-import theme from "~/styles/globalStyles";
-
-export type Theme = typeof theme;
+import { ITheme } from "~/styles/theme";
 
 declare module 'styled-components/native' {
-	export interface DefaultTheme extends Theme { }
+	export interface DefaultTheme extends ITheme { }
 }

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
-import { FlashList, ListRenderItemInfo } from '@shopify/flash-list';
+import { ListRenderItemInfo } from '@shopify/flash-list';
 
 import { ProductProps } from '~/store/ducks/cart.reducer';
 import { Loading, ProductItem } from '~/components';

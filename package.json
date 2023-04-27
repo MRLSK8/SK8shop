@@ -52,7 +52,8 @@
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
     "redux-saga": "^1.2.3",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.9",
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

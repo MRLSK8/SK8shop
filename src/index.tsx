@@ -1,15 +1,15 @@
 import React from 'react';
+
 import '~/config/statusBarConfig';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
 import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider } from 'styled-components/native';
 import codePush from "react-native-code-push";
 import { Provider } from 'react-redux';
 
 import { store, persistor } from '~/store';
-import theme from '~/styles/globalStyles';
+import { useTheme } from './hooks';
 import Routes from '~/routes';
 
 const codePushOptions = {
@@ -27,6 +27,8 @@ const codePushOptions = {
 const queryClient = new QueryClient();
 
 const App = () => {
+	const theme = useTheme(state => state.theme);
+
 	return (
 		<Provider store={store}>
 			<QueryClientProvider client={queryClient}>

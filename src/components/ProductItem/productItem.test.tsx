@@ -3,12 +3,12 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 import { render, fireEvent } from '@testing-library/react-native';
 
-import theme from '~/styles/globalStyles';
+import { dark } from '~/styles/theme';
 
 import ProductItem from '.';
 
 const Providers = ({ children }: { children: JSX.Element }) => (
-	<ThemeProvider theme={theme}>
+	<ThemeProvider theme={dark}>
 		{children}
 	</ThemeProvider>
 );
