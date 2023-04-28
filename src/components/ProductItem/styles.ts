@@ -13,7 +13,7 @@ const borderTop = css`
 export const Container = styled(AnimatedTouchableOpacity).attrs({
 	activeOpacity: 0.7
 })`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.backgroundSupport};
   padding-bottom: 12px;
   align-items: center;
   border-radius: 8px;
@@ -33,7 +33,7 @@ export const Title = styled.Text.attrs({
 	numberOfLines: 1
 })`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   text-transform: capitalize;
   margin: 12px 6px 0;
   font-size: 14px;
@@ -41,7 +41,7 @@ export const Title = styled.Text.attrs({
 
 export const ProductPrice = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   font-size: 12px;
 `;
 
@@ -52,7 +52,7 @@ export const PriceWrapper = styled.View`
 
 export const PreviousProductPrice = styled(ProductPrice)`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Italic};
-  color: ${({ theme }) => theme.colors.white300};
+  color: ${({ theme }) => theme.colors.dark3};
   text-decoration: line-through;
   padding: 0 2px;
 `;

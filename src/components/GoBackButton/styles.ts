@@ -8,7 +8,7 @@ export const Button = styled(BorderlessButton).attrs({
 
 export const ArrowLeft = styled(Entypo).attrs((props) => {
   return {
-    color: props.theme.colors.white300,
+    color: props.theme.colors.neutral3,
     name: 'back',
     size: 22,
   }

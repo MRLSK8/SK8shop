@@ -25,7 +25,7 @@ export const ArrowLeft = styled(SimpleLineIcons).attrs({
 export const DrawerContentContainer = styled(DrawerContentScrollView).attrs({
 	showsVerticalScrollIndicator: false
 })`
-  background-color: ${({ theme }) => theme.colors.dark100};
+  background-color: ${({ theme }) => theme.colors.backgroundSupport};
   padding-top: 48px;
 `;
 
@@ -34,7 +34,7 @@ export const DrawerItemWrapper = styled(DrawerItem as any).attrs((props) => {
 		labelStyle: {
 			textAlign: "left",
 			fontFamily: props.theme.fonts.Ubuntu.Regular,
-			color: props.theme.colors.white200,
+			color: props.theme.colors.neutral3,
 			letterSpacing: 0,
 			lineHeight: 21,
 			fontSize: 16,
@@ -75,7 +75,7 @@ export const WrapperAnimated = styled(MotiView).attrs({
 `;
 
 export const DrawerHeader = styled.View`
-  border-bottom-color: ${({ theme }) => theme.colors.white};
+  border-bottom-color: ${({ theme }) => theme.colors.dark3};
   border-bottom-width: 0.5px;
   margin-bottom: 12px;
   height: 50px;
@@ -109,7 +109,7 @@ export const CartQuantity = styled.View<{ withPlus?: boolean }>`
 
 export const CartQuantityLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.dark3};
   font-size: 10px;
 `;
 
@@ -123,5 +123,5 @@ export const SwitchLabel = styled(Animated.Text).attrs({
 	entering: FadeInLeft.duration(600),
 	exiting: FadeOutLeft.duration(600),
 })`
-  color: ${({ theme }) => theme.colors.white200};
+  color: ${({ theme }) => theme.colors.neutral3};
 `;

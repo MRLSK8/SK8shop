@@ -2,6 +2,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FastImage from 'react-native-fast-image';
 import styled from 'styled-components/native';
 
+interface IFinishPurchaseButton {
+	disabled: boolean
+}
+
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.BoldItalic};
   color: ${({ theme }) => theme.colors.secondary};
@@ -10,9 +14,9 @@ export const Title = styled.Text`
 `;
 
 export const FinishPurchaseButton = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.7
-}) <{ disabled: boolean }>`
-  background-color: ${(props) => props.disabled ? props.theme.colors.white300 : props.theme.colors.tertiary};
+	activeOpacity: 0.7
+}) <IFinishPurchaseButton>`
+  background-color: ${({ theme }) => theme.colors.tertiary};
   opacity: ${(props) => props.disabled ? 0.6 : 1};
   justify-content: center;
   align-items: center;
@@ -27,7 +31,7 @@ export const FinishPurchaseButton = styled.TouchableOpacity.attrs({
 
 export const FinishPurchaseButtonLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.white100};
+  color: ${({ theme }) => theme.colors.dark3};
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-right: 8px;
@@ -35,15 +39,15 @@ export const FinishPurchaseButtonLabel = styled.Text`
 
 export const TotalValue = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Bold};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   margin: 18px 0 0 22px;
   font-size: 22px;
 `;
 
 export const Product = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.7
+	activeOpacity: 0.7
 })`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.backgroundSupport};
   flex-direction: row;
   border-radius: 8px;
   margin: 10px 8px;
@@ -51,16 +55,16 @@ export const Product = styled.TouchableOpacity.attrs({
 `;
 
 export const ProductName = styled.Text.attrs({
-  numberOfLines: 1
+	numberOfLines: 1
 })`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Bold};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   text-transform: capitalize;
   font-size: 16px;
 `;
 
 export const Image = styled(FastImage).attrs({
-  resizeMode: 'cover'
+	resizeMode: 'cover'
 })`
   border-radius: 8px;
   height: 100%;
@@ -74,17 +78,17 @@ export const ContentWrapper = styled.View`
 `;
 
 export const Description = styled.Text.attrs({
-  numberOfLines: 2,
+	numberOfLines: 2,
 })`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   line-height: 20px;
   margin-top: 8px;
   font-size: 14px;
 `;
 
 export const RemoveItemButton = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.7
+	activeOpacity: 0.7
 })`
   justify-content: center;
   flex-direction: row;
@@ -103,15 +107,15 @@ export const RemoveItemButtonLabel = styled.Text`
 
 export const EmptyCartLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.BoldItalic};
-  color: ${({ theme }) => theme.colors.dark100};
-  margin: 64px 0 64px 22px;
+  color: ${({ theme }) => theme.colors.dark3};
+  margin: 50% 0 64px 22px;
   align-self: center;
   font-size: 22px;
 `;
 
 export const ProductPrice = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   font-size: 12px;
 `;
 
@@ -122,17 +126,17 @@ export const PriceWrapper = styled.View`
 
 export const PreviousProductPrice = styled(ProductPrice)`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Italic};
-  color: ${({ theme }) => theme.colors.white300};
+  color: ${({ theme }) => theme.colors.dark3};
   text-decoration: line-through;
   padding: 0 2px;
 `;
 
 export const TrashCanIcon = styled(Ionicons).attrs(props => {
-  return {
-    color: props.theme.colors.secondary,
-    name: 'trash-outline',
-    size: 16,
-  }
+	return {
+		color: props.theme.colors.secondary,
+		name: 'trash-outline',
+		size: 16,
+	}
 })`
   margin-right: 8px;
   margin-top: 4px;

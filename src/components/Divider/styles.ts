@@ -10,7 +10,7 @@ export const Container = styled.View<{ containerWidth?: number, marginVertical?:
 `;
 
 export const DividerView = styled.View`
-  border-color: ${({ theme }) => theme.colors.dark100}; 
+  border-color: ${({ theme }) => theme.colors.dark2};
   border-bottom-width: 0.6px;
   flex: 1;
 `;

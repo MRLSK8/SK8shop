@@ -92,15 +92,17 @@ const ProductDetails = () => {
 	return (
 		<SafeAreaViewWrapper>
 			<ScreenHeader />
-			<S.ImageButtonWrapper
-				onPress={() => handleGoToImagePreview(productData.image)}
-			>
-				<S.Image source={{ uri: productData.image }} style={animatedStyle} />
-			</S.ImageButtonWrapper>
+
 			<Container
 				onScroll={scrollHandler}
 				scrollEventThrottle={16}
 			>
+				<S.ImageButtonWrapper
+					onPress={() => handleGoToImagePreview(productData.image)}
+				>
+					<S.Image source={{ uri: productData.image }} style={animatedStyle} />
+				</S.ImageButtonWrapper>
+
 				<S.Title>{productData.name}</S.Title>
 
 				<S.Description>{productData.description}</S.Description>
@@ -124,16 +126,13 @@ const ProductDetails = () => {
 				<S.AddToCartButton
 					isAlreadyInTheCart={isAlreadyInTheCart}
 					onPress={() =>
-						isAlreadyInTheCart ? handleNavigateToCart() : handleAddProductToCart(productData)}
+						isAlreadyInTheCart ? handleNavigateToCart() : handleAddProductToCart(productData)
+					}
 				>
 					<S.AddToCartButtonLabel>
 						{isAlreadyInTheCart ? 'Ir para o carrinho' : 'Adicionar ao carrinho'}
 					</S.AddToCartButtonLabel>
-					{
-						isAlreadyInTheCart && (
-							<S.ShoppingCartIcon />
-						)
-					}
+					{isAlreadyInTheCart && (<S.ShoppingCartIcon />)}
 				</S.AddToCartButton>
 			</Container>
 		</SafeAreaViewWrapper >

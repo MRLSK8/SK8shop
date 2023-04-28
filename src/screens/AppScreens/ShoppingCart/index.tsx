@@ -26,6 +26,8 @@ const ShoppingCart = () => {
 	const { navigate } = useNavigation();
 	const dispatch = useAppDispatch();
 
+	const isCartEmpty = products.length === 0;
+
 	const handleRemoveProductFromCart = (productId: string) => {
 		if (!productId) return;
 
@@ -61,11 +63,14 @@ const ShoppingCart = () => {
 		<SafeAreaViewWrapper>
 			<ScreenHeader />
 			<Container>
-				<S.Title>
-					Meu Carrinho {''}
-					<S.NumberOfItems>({products.length}) {products.length > 1 ? 'itens' : 'item'}
-					</S.NumberOfItems>
-				</S.Title>
+				{!isCartEmpty && (
+					<S.Title>
+						Meu Carrinho {''}
+						<S.NumberOfItems>
+							({products.length}) {products.length > 1 ? 'itens' : 'item'}
+						</S.NumberOfItems>
+					</S.Title>
+				)}
 
 				{
 					products.map(product => (
@@ -98,24 +103,30 @@ const ShoppingCart = () => {
 				}
 
 				{
-					!products.length && (
+					isCartEmpty && (
 						<S.EmptyCartLabel>
-							Seu carrinho está vazio..
+							Seu carrinho está vazio...
 						</S.EmptyCartLabel>
 					)
 				}
 
-				<S.TotalValue>
-					Total: {numberToCurrency(totalValue)}
-				</S.TotalValue>
-				<S.FinishPurchaseButton
-					disabled={!products?.length}
-					onPress={() => handleFinishPurchase(products)}
-				>
-					<S.FinishPurchaseButtonLabel>
-						Finalizar compra
-					</S.FinishPurchaseButtonLabel>
-				</S.FinishPurchaseButton>
+				{
+					!isCartEmpty && (
+						<>
+							<S.TotalValue>
+								Total: {numberToCurrency(totalValue)}
+							</S.TotalValue>
+
+							<S.FinishPurchaseButton
+								disabled={!products?.length}
+								onPress={() => handleFinishPurchase(products)}
+							>
+								<S.FinishPurchaseButtonLabel>
+									Finalizar compra
+								</S.FinishPurchaseButtonLabel>
+							</S.FinishPurchaseButton>
+						</>
+					)}
 			</Container>
 		</SafeAreaViewWrapper>
 	);

@@ -8,11 +8,11 @@ const CachedImage = Animated.createAnimatedComponent(FastImage as any);
 export const IMAGE_HEIGHT = 180;
 
 interface AddToCartButton {
-	isAlreadyInTheCart: boolean;
+  isAlreadyInTheCart: boolean;
 }
 
 export const Image = styled(CachedImage as any).attrs({
-	resizeMode: 'cover'
+  resizeMode: 'cover'
 })`
   height: ${IMAGE_HEIGHT}px;
   width: 100%;
@@ -20,7 +20,7 @@ export const Image = styled(CachedImage as any).attrs({
 
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Bold};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   margin: 16px 0 14px 16px;
   letter-spacing: 2px;
   line-height: 28px;
@@ -29,14 +29,14 @@ export const Title = styled.Text`
 
 export const Description = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   margin: 8px 0 8px 16px;
   line-height: 24px;
   font-size: 18px;
 `;
 
 export const AddToCartButton = styled.TouchableOpacity.attrs({
-	activeOpacity: 0.7
+  activeOpacity: 0.7
 }) <AddToCartButton>`
   background-color: ${(props) => props.isAlreadyInTheCart ? props.theme.colors.tertiary : props.theme.colors.primary};
   justify-content: center;
@@ -52,30 +52,30 @@ export const AddToCartButton = styled.TouchableOpacity.attrs({
 
 export const AddToCartButtonLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.white100};
+  color: ${({ theme }) => theme.colors.neutral2};
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-right: 8px;
 `;
 
 export const ShoppingCartIcon = styled(Ionicons).attrs(props => {
-	return {
-		color: props.theme.colors.white200,
-		name: 'ios-cart-outline',
-		size: 20,
-	}
+  return {
+    color: props.theme.colors.neutral3,
+    name: 'ios-cart-outline',
+    size: 20,
+  }
 })``;
 
 export const PreviousProductPrice = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Italic};
-  color: ${({ theme }) => theme.colors.white300};
+  color: ${({ theme }) => theme.colors.dark3};
   text-decoration: line-through;
   font-size: 20px;
 `;
 
 export const ProductPrice = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   font-size: 32px;
 `;
 
@@ -88,7 +88,7 @@ export const DescriptionWrapper = styled.View`
 `;
 
 export const GoBackToProductListButton = styled.TouchableOpacity.attrs({
-	activeOpacity: 0.7
+  activeOpacity: 0.7
 })`
   background-color: ${(props) => props.theme.colors.tertiary};
   justify-content: center;
@@ -104,7 +104,7 @@ export const GoBackToProductListButton = styled.TouchableOpacity.attrs({
 
 export const GoBackToProductListButtonLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.white100};
+  color: ${({ theme }) => theme.colors.neutral2};
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-right: 8px;

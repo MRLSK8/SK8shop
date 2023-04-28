@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
 });
 
 export const Container = styled.View`
-  background-color: ${({ theme }) => theme.colors.dark};
+  background-color: ${({ theme }) => theme.colors.dark1};
   flex: 1;
 `;
 
@@ -32,7 +32,7 @@ export const ImageZoomable = styled(ImageZoom).attrs({
 
 export const CompressIcon = styled(FontAwesome5).attrs(props => {
   return {
-    color: props.theme.colors.white200,
+    color: props.theme.colors.neutral3,
     name: 'compress',
     size: 20,
   }
@@ -40,7 +40,7 @@ export const CompressIcon = styled(FontAwesome5).attrs(props => {
 
 export const PaperIconButton = styled(IconButton).attrs(props => {
   return {
-    color: props.theme.colors.white200,
+    color: props.theme.colors.neutral3,
     tvParallaxProperties: false,
     hasTVPreferredFocus: false,
     size: 24,

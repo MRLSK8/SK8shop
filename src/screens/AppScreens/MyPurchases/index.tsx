@@ -17,6 +17,8 @@ const MyPurchases = () => {
 	const { navigate } = useNavigation();
 	const dispatch = useAppDispatch();
 
+	const isPurchaseEmpty = products.length === 0;
+
 	const handleGoToProductDetails = (productData: ProductProps) => {
 		navigate('ProductsDetails', { productId: productData.id });
 	};
@@ -29,9 +31,14 @@ const MyPurchases = () => {
 	return (
 		<SafeAreaViewWrapper>
 			<ScreenHeader />
-			<S.Title>
-				Meus pedidos
-			</S.Title>
+			{
+				!isPurchaseEmpty && (
+					<S.Title>
+						Meus pedidos ({products.length})
+					</S.Title>
+				)
+			}
+
 			<Container>
 				{
 					products.map(product => (
@@ -68,9 +75,9 @@ const MyPurchases = () => {
 				}
 
 				{
-					!products.length && (
+					isPurchaseEmpty && (
 						<S.EmptyPurchasesLabel>
-							Nenhum pedido...
+							Nenhum pedido encontrado...
 						</S.EmptyPurchasesLabel>
 					)
 				}

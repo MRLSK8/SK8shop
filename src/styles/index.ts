@@ -10,12 +10,11 @@ export const Container = styled(Animated.ScrollView).attrs({
 		paddingBottom: 32,
 	}
 })`
-  background-color: ${({ theme }) => theme.colors.white200};
   flex: 1;
 `;
 
 export const SafeAreaViewWrapper = styled.SafeAreaView`
-  background-color: ${({ theme }) => theme.colors.white200};
+  background-color: ${({ theme }) => theme.colors.background};
   flex: 1;
 `;
 

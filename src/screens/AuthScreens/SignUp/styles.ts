@@ -19,7 +19,7 @@ export const SignUpButton = styled.TouchableOpacity.attrs({
 
 export const SignUpButtonLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.white100};
+  color: ${({ theme }) => theme.colors.neutral2};
   text-transform: uppercase;
   letter-spacing: 1px;
 `;

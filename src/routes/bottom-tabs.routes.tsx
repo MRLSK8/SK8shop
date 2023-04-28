@@ -8,7 +8,8 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 import MyPurchasesStack from './purchases.routes';
 import ProductsStack from './products.routes';
-import { useAppSelector } from '~/hooks';
+
+import { useAppSelector, useTheme } from '~/hooks';
 
 import * as S from './styles';
 
@@ -25,7 +26,7 @@ declare global {
 
 export default function BottomTabStack({ navigation }: any) {
 	const cartQuantity = useAppSelector(state => state.cart.products.length);
-	const { colors, fonts } = useContext(ThemeContext);
+	const { theme } = useTheme();
 
 	return (
 		<Navigator
@@ -34,26 +35,26 @@ export default function BottomTabStack({ navigation }: any) {
 				headerShown: true,
 				headerTitleAlign: 'center',
 				headerTitle: '',
-				tabBarActiveTintColor: colors.secondary,
-				tabBarInactiveTintColor: colors.white200,
+				tabBarActiveTintColor: theme.colors.secondary,
+				tabBarInactiveTintColor: theme.colors.neutral3,
 				tabBarStyle: {
-					backgroundColor: colors.dark100,
+					backgroundColor: theme.colors.backgroundSupport,
 					borderTopWidth: 0,
 					elevation: 0,
 					padding: 16,
 					height: 70,
 				},
 				tabBarLabelStyle: {
-					fontFamily: fonts.Ubuntu.Regular,
+					fontFamily: theme.fonts.Ubuntu.Regular,
 					textAlign: 'center',
 					letterSpacing: 0,
 					marginBottom: 8,
 					lineHeight: 15,
 					marginTop: 4,
-					fontSize: 14,
+					fontSize: 18,
 				},
 				headerStyle: {
-					backgroundColor: colors.dark100,
+					backgroundColor: theme.colors.backgroundSupport,
 					elevation: 0,
 				},
 				headerLeft: () => (
@@ -61,7 +62,7 @@ export default function BottomTabStack({ navigation }: any) {
 						<Entypo
 							size={32}
 							name={'menu'}
-							color={colors.white200}
+							color={theme.colors.neutral3}
 						/>
 					</S.MenuButton>
 				),
@@ -70,7 +71,7 @@ export default function BottomTabStack({ navigation }: any) {
 						<Ionicons
 							size={28}
 							name={'ios-cart-outline'}
-							color={colors.white200}
+							color={theme.colors.neutral3}
 						/>
 						<S.CartQuantity withPlus={cartQuantity > 99}>
 							<S.CartQuantityLabel>

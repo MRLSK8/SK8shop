@@ -5,13 +5,13 @@ import { Pressable } from 'react-native';
 
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.BoldItalic};
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.dark3};
   font-size: 18px;
   margin: 12px;
 `;
 
 export const Image = styled(FastImage).attrs({
-  resizeMode: 'cover'
+	resizeMode: 'cover'
 })`
   border-radius: 8px;
   height: 100%;
@@ -19,10 +19,10 @@ export const Image = styled(FastImage).attrs({
 `;
 
 export const ProductName = styled.Text.attrs({
-  numberOfLines: 1
+	numberOfLines: 1
 })`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Bold};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   text-transform: capitalize;
   font-size: 16px;
 `;
@@ -34,17 +34,17 @@ export const ContentWrapper = styled.View`
 `;
 
 export const Description = styled.Text.attrs({
-  numberOfLines: 2,
+	numberOfLines: 2,
 })`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   line-height: 20px;
   margin-top: 8px;
   font-size: 14px;
 `;
 
 export const RemoveItemButton = styled(Pressable).attrs({
-  hitslop: 30
+	hitslop: 30
 })`
   justify-content: center;
   flex-direction: row;
@@ -53,9 +53,9 @@ export const RemoveItemButton = styled(Pressable).attrs({
 `;
 
 export const Product = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.7
+	activeOpacity: 0.7
 })`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.backgroundSupport};
   flex-direction: row;
   border-radius: 8px;
   margin: 10px 8px;
@@ -64,23 +64,23 @@ export const Product = styled.TouchableOpacity.attrs({
 
 export const ProductPrice = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   font-size: 12px;
 `;
 
 export const PreviousProductPrice = styled(ProductPrice)`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Italic};
-  color: ${({ theme }) => theme.colors.white300};
+  color: ${({ theme }) => theme.colors.dark3};
   text-decoration: line-through;
   padding: 0 2px;
 `;
 
 export const TrashCanIcon = styled(Ionicons).attrs(props => {
-  return {
-    color: props.theme.colors.secondary,
-    name: 'trash-outline',
-    size: 16,
-  }
+	return {
+		color: props.theme.colors.secondary,
+		name: 'trash-outline',
+		size: 16,
+	}
 })``;
 
 export const PriceWrapper = styled.View`
@@ -97,8 +97,8 @@ export const PurchaseHeader = styled.View`
 
 export const EmptyPurchasesLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.BoldItalic};
-  color: ${({ theme }) => theme.colors.dark100};
+  color: ${({ theme }) => theme.colors.dark3};
   align-self: center;
-  margin-top: 120px;
-  font-size: 22px;
+  margin-top: 50%;
+  font-size: 20px;
 `;

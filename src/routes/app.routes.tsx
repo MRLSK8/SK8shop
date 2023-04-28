@@ -7,6 +7,9 @@ import auth from '@react-native-firebase/auth';
 import LottieView from 'lottie-react-native';
 import { Switch } from 'react-native-paper';
 
+import skateboard_dark from '~/assets/lottieFiles/skateboarding-dark.json';
+import skateboard_light from '~/assets/lottieFiles/skateboarding-light.json';
+
 import {
 	DrawerContentComponentProps,
 	createDrawerNavigator,
@@ -70,7 +73,7 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
 			<S.DrawerHeader>
 				<S.WrapperAnimated>
 					<LottieView
-						source={require('~/assets/lottieFiles/skateboarding.json')}
+						source={themeName === 'dark' ? skateboard_light : skateboard_dark}
 						autoPlay
 						loop
 					/>
@@ -82,7 +85,7 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
 					<Feather
 						size={22}
 						name={'home'}
-						color={theme.colors.white200}
+						color={theme.colors.neutral3}
 					/>
 				}
 				onPress={() =>
@@ -99,7 +102,7 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
 					<Ionicons
 						size={22}
 						name={'list-outline'}
-						color={theme.colors.white200}
+						color={theme.colors.neutral3}
 					/>
 				}
 				onPress={() =>
@@ -113,7 +116,7 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
 					<Ionicons
 						size={22}
 						name={'ios-cart-outline'}
-						color={theme.colors.white200}
+						color={theme.colors.neutral3}
 					/>
 				}
 				onPress={() =>
@@ -122,8 +125,8 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
 			/>
 			<S.SwitchWrapper>
 				<Switch
-					color={theme.colors.primary}
-					thumbColor={theme.colors.white200}
+					color={theme.colors.secondary}
+					thumbColor={theme.colors.neutral3}
 					value={themeName === "dark"}
 					style={{ marginHorizontal: 6 }}
 					onValueChange={(value) => {

@@ -7,7 +7,7 @@ import { ProductProps } from '~/store/ducks/cart.reducer';
 import { FlatListType } from '~/@types/types';
 
 export const Container = styled.View`
-  background-color: ${({ theme }) => theme.colors.white200};
+  background-color: ${({ theme }) => theme.colors.background};
   justify-content: center;
   padding-top: 18px;
   flex: 1;
@@ -27,14 +27,14 @@ export const ProductList = styled(FlatList as FlatListType<ProductProps>).attrs(
 
 export const OrderLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   letter-spacing: 2px;
   margin-left: 10px;
-  font-size: 18px;
+  font-size: 20px;
 `;
 
 export const OrderOptions = styled.View`
-  margin: 10px 10px 12px;
+  margin: 16px 10px 12px;
   flex-direction: row;
 	gap: 12px;
 `;
@@ -46,7 +46,7 @@ export const OrderOption = styled(Pressable)`
 
 export const OrderOptionLabel = styled.Text`
   font-family: ${({ theme }) => theme.fonts.Ubuntu.Regular};
-  color: ${({ theme }) => theme.colors.dark200};
+  color: ${({ theme }) => theme.colors.dark3};
   font-size: 16px;
 `;
 

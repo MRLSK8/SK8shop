@@ -13,10 +13,10 @@ const useImageAnimation = () => {
 
 	const animatedStyle = useAnimatedStyle(() => {
 		return {
-			height: interpolate(
+			opacity: interpolate(
 				scrollY.value,
-				[0, IMAGE_HEIGHT],
-				[IMAGE_HEIGHT, IMAGE_HEIGHT / 2],
+				[0, IMAGE_HEIGHT / 3, IMAGE_HEIGHT],
+				[1, 0.4, 0],
 				Extrapolation.CLAMP
 			)
 		};
