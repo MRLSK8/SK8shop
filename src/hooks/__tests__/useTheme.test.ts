@@ -29,5 +29,4 @@ describe('Testing useTheme hook', () => {
 		});
 		expect(result.current.themeName).toBe("dark");
 	});
-
 });
