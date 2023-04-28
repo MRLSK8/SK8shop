@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import Feather from 'react-native-vector-icons/Feather';
-import { ThemeContext } from 'styled-components/native';
 import auth from '@react-native-firebase/auth';
 import LottieView from 'lottie-react-native';
+import { Switch } from 'react-native-paper';
 
 import {
+	DrawerContentComponentProps,
 	createDrawerNavigator,
 } from '@react-navigation/drawer';
 
 import { logout } from '~/store/actions/auth/auth.actions';
 import BottomTab from './bottom-tabs.routes';
-import { useAppDispatch } from '~/hooks';
+import { useAppDispatch, useTheme } from '~/hooks';
 
 import * as S from './styles';
 
@@ -36,8 +37,8 @@ export default function DrawerStack() {
 	);
 }
 
-const DrawerContent: React.FC<any> = props => {
-	const { colors } = useContext(ThemeContext);
+const DrawerContent = (props: DrawerContentComponentProps) => {
+	const { changeTheme, theme, themeName } = useTheme();
 	const { reset, navigate } = useNavigation();
 	const dispatch = useAppDispatch();
 
@@ -77,54 +78,67 @@ const DrawerContent: React.FC<any> = props => {
 			</S.DrawerHeader>
 			<S.DrawerItemWrapper
 				label={'Home'}
-				style={{
-					marginTop: 8
-				}}
 				icon={() =>
 					<Feather
 						size={22}
 						name={'home'}
-						color={colors.white200}
+						color={theme.colors.white200}
 					/>
 				}
 				onPress={() =>
 					handleNavigation(
 						'ProductsStack',
 						{ screen: 'Products' }
-					)}
+					)
+				}
 			/>
 
 			<S.DrawerItemWrapper
 				label={'Meus Pedidos'}
-				style={{
-					marginTop: 8
-				}}
 				icon={() =>
 					<Ionicons
 						size={22}
 						name={'list-outline'}
-						color={colors.white200}
+						color={theme.colors.white200}
 					/>
 				}
 				onPress={() =>
-					handleNavigation('MyPurchasesStack')}
+					handleNavigation('MyPurchasesStack')
+				}
 			/>
 
 			<S.DrawerItemWrapper
 				label={'Meu Carrinho'}
-				style={{
-					marginTop: 8
-				}}
 				icon={() =>
 					<Ionicons
 						size={22}
 						name={'ios-cart-outline'}
-						color={colors.white200}
+						color={theme.colors.white200}
 					/>
 				}
 				onPress={() =>
-					handleNavigation('ShoppingCart')}
+					handleNavigation('ShoppingCart')
+				}
 			/>
+			<S.SwitchWrapper>
+				<Switch
+					color={theme.colors.primary}
+					thumbColor={theme.colors.white200}
+					value={themeName === "dark"}
+					style={{ marginHorizontal: 6 }}
+					onValueChange={(value) => {
+						changeTheme(value ? "dark" : "light");
+					}}
+				/>
+
+				{themeName === "light" && (
+					<S.SwitchLabel>Light</S.SwitchLabel>
+				)}
+
+				{themeName === "dark" && (
+					<S.SwitchLabel>Dark</S.SwitchLabel>
+				)}
+			</S.SwitchWrapper>
 
 			<S.DrawerItemWrapperLogOut
 				label={'Sair'}
@@ -132,7 +146,7 @@ const DrawerContent: React.FC<any> = props => {
 					<Feather
 						size={22}
 						name={'log-out'}
-						color={colors.secondary}
+						color={theme.colors.secondary}
 					/>
 				}
 				onPress={handleLogOut}

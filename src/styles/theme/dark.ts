@@ -8,7 +8,7 @@ export const dark = {
 
 		white: '#fff',
 		white100: '#f0f0f0',
-		white200: '#ffffff85',
+		white200: '#cccccc',
 		white300: '#5b5b5b',
 
 		dark: '#000',

@@ -11,6 +11,7 @@ type Themes = keyof typeof themes;
 
 interface IProps {
 	theme: ITheme;
+	themeName: Themes;
 	changeTheme: (theme: Themes) => void
 }
 
@@ -24,9 +25,11 @@ export const useTheme = create(
 		immer<IProps>(
 			(set) => ({
 				theme: dark,
+				themeName: 'dark',
 				changeTheme: (theme) => {
 					set((state) => {
 						state.theme = themesOptions[theme] ?? dark;
+						state.themeName = theme;
 					});
 				}
 			})

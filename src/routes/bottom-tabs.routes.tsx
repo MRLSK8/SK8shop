@@ -33,6 +33,7 @@ export default function BottomTabStack({ navigation }: any) {
 			screenOptions={{
 				headerShown: true,
 				headerTitleAlign: 'center',
+				headerTitle: '',
 				tabBarActiveTintColor: colors.secondary,
 				tabBarInactiveTintColor: colors.white200,
 				tabBarStyle: {

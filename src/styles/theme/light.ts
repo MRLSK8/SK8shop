@@ -11,8 +11,8 @@ export const light = {
 		white200: '#ffffff85',
 		white300: '#5b5b5b',
 
-		dark: '#000',
-		dark100: '#171c2b',
-		dark200: '#1a1a1a',
+		dark: '#4d4d4d',
+		dark100: '#2e3856',
+		dark200: '#5f5f5f',
 	}
 }
