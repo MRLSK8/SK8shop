@@ -2,20 +2,20 @@
 import React from 'react';
 
 import { render } from '@testing-library/react-native';
-import TestScreen from '~/screens/testScreen';
+import TestScreen from '~/screens/TestScreen';
 
 describe('TestScreen tests', () => {
-  it('should show input name with placeholder "Name" correctly', () => {
-    const { getByPlaceholderText } = render(<TestScreen />);
-    const inputName = getByPlaceholderText('Name');
+	it('should show input name with placeholder "Name" correctly', () => {
+		const { getByPlaceholderText } = render(<TestScreen />);
+		const inputName = getByPlaceholderText('Name');
 
-    expect(inputName).toBeTruthy();
-  });
+		expect(inputName).toBeTruthy();
+	});
 
-  it('should show screen title correctly', () => {
-    const { getByTestId } = render(<TestScreen />);
-    const screenTitle = getByTestId('screen-title');
+	it('should show screen title correctly', () => {
+		const { getByTestId } = render(<TestScreen />);
+		const screenTitle = getByTestId('screen-title');
 
-    expect(screenTitle.props.children).toEqual('Test Screen');
-  });
+		expect(screenTitle.props.children).toEqual('Test Screen');
+	});
 });
