@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start --reset-cache",
     "android:clean": "cd android && ./gradlew clean && cd ../",
-    "android:build": "yarn android:clean && cd android && ./gradlew assembleRelease",
+    "apk": "yarn android:clean && cd android && ./gradlew assembleRelease",
     "test": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
