@@ -1,2 +1,2 @@
 export { useAppDispatch, useAppSelector } from './reduxHooks';
-export { useTheme } from './useTheme';
+export { useTheme, defaultThemeName } from './useTheme';
