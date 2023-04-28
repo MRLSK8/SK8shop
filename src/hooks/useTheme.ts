@@ -29,7 +29,7 @@ export const useTheme = create(
 				changeTheme: (theme) => {
 					set((state) => {
 						state.theme = themesOptions[theme] ?? dark;
-						state.themeName = theme;
+						state.themeName = themesOptions[theme] ? theme : 'dark';
 					});
 				}
 			})
