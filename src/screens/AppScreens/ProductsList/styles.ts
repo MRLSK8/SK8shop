@@ -22,7 +22,8 @@ export const ProductList = styled(FlatList as FlatListType<ProductProps>).attrs(
 	numColumns: 2,
 	contentContainerStyle: {
 		paddingBottom: 10,
-	}
+	},
+	showsVerticalScrollIndicator: false
 })``;
 
 export const OrderLabel = styled.Text`
