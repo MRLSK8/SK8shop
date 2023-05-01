@@ -8,6 +8,7 @@ import { showErrorAlert } from '~/helpers';
 type OrderByOptions = 'name' | 'price';
 
 export const useProducts = () => {
+	const productsFirebaseRef = firestore().collection<Omit<ProductProps, "id">>('products');
 	const [orderOption, setOrderOption] = useState<OrderByOptions>('name');
 	const [products, setProducts] = useState<ProductProps[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -22,19 +23,17 @@ export const useProducts = () => {
 
 
 	useEffect(() => {
-		const subscriber = firestore()
-			.collection('products')
-			.onSnapshot(querySnapshots => {
-				const _products = querySnapshots.docs.map(querySnapshot => ({
-					...querySnapshot.data() as ProductProps,
-					id: querySnapshot.id,
-				}));
+		const subscriber = productsFirebaseRef.onSnapshot(querySnapshots => {
+			const _products = querySnapshots.docs.map(querySnapshot => ({
+				...querySnapshot.data() as ProductProps,
+				id: querySnapshot.id,
+			}));
 
-				const _productsOrdered = handleOrderProducts(_products);
+			const _productsOrdered = handleOrderProducts(_products);
 
-				setProducts(_productsOrdered);
-				setIsLoading(false);
-			}, handleGetProductsError);
+			setProducts(_productsOrdered);
+			setIsLoading(false);
+		}, handleGetProductsError);
 
 		return () => subscriber();
 	}, []);
@@ -44,5 +43,10 @@ export const useProducts = () => {
 		setProducts(_products);
 	}, [orderOption]);
 
-	return { setOrderOption, isLoading, products, orderOption };
+	return {
+		setOrderOption,
+		orderOption,
+		isLoading,
+		products,
+	};
 }
