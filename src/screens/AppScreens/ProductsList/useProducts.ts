@@ -21,7 +21,6 @@ export const useProducts = () => {
 		return lodash.orderBy(_products ?? products, [orderOption], ['asc']);
 	}, [products, orderOption]);
 
-
 	useEffect(() => {
 		const subscriber = productsFirebaseRef.onSnapshot(querySnapshots => {
 			const _products = querySnapshots.docs.map(querySnapshot => ({
