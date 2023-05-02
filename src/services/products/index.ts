@@ -8,7 +8,7 @@ interface IProducts {
 	id: string
 }
 
-export const getProducts = async (): Promise<IProducts[] | []> => {
+const getProducts = async (): Promise<IProducts[] | []> => {
 	try {
 		const response = await api.get('/products');
 		return response.data;
@@ -19,3 +19,6 @@ export const getProducts = async (): Promise<IProducts[] | []> => {
 	return [];
 }
 
+export const productsService = {
+	getProducts
+};
