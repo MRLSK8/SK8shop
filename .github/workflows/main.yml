@@ -6,7 +6,7 @@ jobs:
   run_tests:
     name: run tests on main
     runs-on: ubuntu-latest
-    steps: 
+    steps:
      - uses: actions/checkout@v4
      - name: Using Node.js
        uses: actions/setup-node@v4
